@@ -1,7 +1,9 @@
 package net.christopher.mccourse;
 
 import net.christopher.mccourse.block.ModBlocks;
+import net.christopher.mccourse.item.ModItemGroup;
 import net.christopher.mccourse.item.ModItems;
+import net.christopher.mccourse.util.ModRegistries;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -13,8 +15,9 @@ public class MCCourseMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		ModItemGroup.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModRegistries.registerModStuffs();
 	}
 }
