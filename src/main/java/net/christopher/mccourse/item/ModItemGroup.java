@@ -23,6 +23,7 @@ public class ModItemGroup {
                         entries.add(ModItems.SPEEDFOOD);
                         entries.add(ModItems.STRENGTHFOOD);
                         entries.add(ModItems.PEAT_BRICK);
+                        entries.add(ModItems.CREATIVE_MODE_SWORD);
 
 
 
@@ -31,6 +32,14 @@ public class ModItemGroup {
                         entries.add(ModItems.PINK_GARNET_PICKAXE);
                         entries.add(ModItems.PINK_GARNET_SHOVEL);
                         entries.add(ModItems.PINK_GARNET_HOE);
+                        entries.add(ModItems.PINK_GARNET_PAXEL);
+                        entries.add(ModItems.PINK_GARNET_HORSE_ARMOR);
+
+
+                        entries.add(ModItems.PINK_GARNET_HELMET);
+                        entries.add(ModItems.PINK_GARNET_CHESTPLATE);
+                        entries.add(ModItems.PINK_GARNET_LEGGINGS);
+                        entries.add(ModItems.PINK_GARNET_BOOTS);
 
 
 
@@ -49,6 +58,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.PINK_GARNET_FENCE_GATE);
                         entries.add(ModBlocks.PINK_GARNET_DOOR);
                         entries.add(ModBlocks.PINK_GARNET_TRAPDOOR);
+                        entries.add(ModBlocks.PINK_GARNET_LAMP_BLOCK);
 
 
                         entries.add(ModBlocks.SOUND_BLOCK);

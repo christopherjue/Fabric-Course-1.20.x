@@ -2,9 +2,7 @@ package net.christopher.mccourse.item;
 
 import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.block.ModBlocks;
-import net.christopher.mccourse.item.custom.MetalDetectorItem;
-import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
-import net.fabricmc.fabric.api.item.v1.FabricItem;
+import net.christopher.mccourse.item.custom.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -28,19 +26,44 @@ public class ModItems {
          new Item(new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_SWORD= registerItem("pink_garnet_sword",
-            new SwordItem(ModToolMaterial.PINK_GARNET, 5, -2.5f, new FabricItemSettings()));
+            new ModPoisonSwordItem(ModToolMaterial.PINK_GARNET, 5, -2.5f, new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_SHOVEL = registerItem("pink_garnet_shovel",
             new ShovelItem(ModToolMaterial.PINK_GARNET, 4.25f, -1f,new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_AXE = registerItem("pink_garnet_axe",
-            new AxeItem(ModToolMaterial.PINK_GARNET, 6, -2.5f,new FabricItemSettings()));
+            new ModWeaknessAxeItem(ModToolMaterial.PINK_GARNET, 6, -3.5f,new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_HOE= registerItem("pink_garnet_hoe",
-            new HoeItem(ModToolMaterial.PINK_GARNET, 10, -3.5f, new FabricItemSettings()));
+            new ModSlownessHoeItem(ModToolMaterial.PINK_GARNET, 10, -2.98f, new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_PICKAXE= registerItem("pink_garnet_pickaxe",
-            new PickaxeItem(ModToolMaterial.PINK_GARNET, 3, -0.1f, new FabricItemSettings()));
+            new PickaxeItem(ModToolMaterial.PINK_GARNET, 3, -3.9f, new FabricItemSettings()));
+
+    public static final  Item  PINK_GARNET_PAXEL= registerItem("pink_garnet_paxel",
+            new PaxelItem(ModToolMaterial.PINK_GARNET, 5, -3f, new FabricItemSettings()));
+
+    public static final  Item  PINK_GARNET_HELMET =  registerItem("pink_garnet_helmet",
+            new ModArmorItem(ModArmorMaterials.PINK_GARNET, ArmorItem.Type.HELMET ,new FabricItemSettings()));
+
+    public static final  Item  PINK_GARNET_CHESTPLATE =  registerItem("pink_garnet_chestplate",
+            new ModArmorItem((ModArmorMaterials.PINK_GARNET), ArmorItem.Type.CHESTPLATE ,new FabricItemSettings()));
+
+    public static final  Item  PINK_GARNET_LEGGINGS =  registerItem("pink_garnet_leggings",
+            new ModArmorItem((ModArmorMaterials.PINK_GARNET), ArmorItem.Type.LEGGINGS ,new FabricItemSettings()));
+
+    public static final  Item  PINK_GARNET_BOOTS =  registerItem("pink_garnet_boots",
+            new ModArmorItem((ModArmorMaterials.PINK_GARNET), ArmorItem.Type.BOOTS ,new FabricItemSettings()));
+
+    public static final Item PINK_GARNET_HORSE_ARMOR = registerItem("pink_garnet_horse_armor",
+            new HorseArmorItem(14, "pink_garnet", new FabricItemSettings()));
+
+    public static final  Item  CREATIVE_MODE_SWORD = registerItem("creative_mode_sword",
+            new ModBestEffectCreativeSwordItem(ModToolMaterial.PINK_GARNET, 5, -1f,new FabricItemSettings()));
+
+
+
+
 
     public static final  Item SPEEDFOOD = registerItem("speedfood",
             new Item(new FabricItemSettings().food(ModFoodComponents.SPEEDFOOD)));

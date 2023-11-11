@@ -1,6 +1,7 @@
 package net.christopher.mccourse;
 
 import net.christopher.mccourse.block.ModBlocks;
+import net.christopher.mccourse.enchantment.ModEnchantments;
 import net.christopher.mccourse.item.ModItemGroup;
 import net.christopher.mccourse.item.ModItems;
 import net.christopher.mccourse.util.ModRegistries;
@@ -16,8 +17,11 @@ public class MCCourseMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItemGroup.registerItemGroups();
+
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
 		ModRegistries.registerModStuffs();
+		ModEnchantments.registerModEnchantmnets();
 	}
 }
