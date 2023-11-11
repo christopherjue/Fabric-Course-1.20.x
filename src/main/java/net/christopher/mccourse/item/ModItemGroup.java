@@ -20,8 +20,6 @@ public class ModItemGroup {
                         entries.add(ModItems.PINK_GARNET);
                         entries.add(ModItems.CAULIFLOWER);
                         entries.add(ModItems.METAL_DETECTOR);
-                        entries.add(ModItems.SPEEDFOOD);
-                        entries.add(ModItems.STRENGTHFOOD);
                         entries.add(ModItems.PEAT_BRICK);
                         entries.add(ModItems.CREATIVE_MODE_SWORD);
 
@@ -40,6 +38,7 @@ public class ModItemGroup {
                         entries.add(ModItems.PINK_GARNET_CHESTPLATE);
                         entries.add(ModItems.PINK_GARNET_LEGGINGS);
                         entries.add(ModItems.PINK_GARNET_BOOTS);
+                        entries.add(ModItems.DATA_TABLET);
 
 
 

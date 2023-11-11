@@ -61,16 +61,10 @@ public class ModItems {
     public static final  Item  CREATIVE_MODE_SWORD = registerItem("creative_mode_sword",
             new ModBestEffectCreativeSwordItem(ModToolMaterial.PINK_GARNET, 5, -1f,new FabricItemSettings()));
 
+    public static final Item DATA_TABLET = registerItem("data_tablet",
+            new DataTabletItem(new FabricItemSettings().maxCount(1)));
 
 
-
-
-    public static final  Item SPEEDFOOD = registerItem("speedfood",
-            new Item(new FabricItemSettings().food(ModFoodComponents.SPEEDFOOD)));
-
-
-    public static final  Item STRENGTHFOOD = registerItem("strengthfood",
-            new Item(new FabricItemSettings().food(ModFoodComponents.STRENGTHFOOD)));
 
 
 
