@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cauliflower": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mccourse:cauliflower"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cauliflower_seeds_"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cauliflower"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cauliflower_seeds_"
+    ]
+  },
+  "sends_telemetry_event": false
+}

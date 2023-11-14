@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "mccourse:cauliflower"
+    }
+  },
+  "pattern": [
+    "   ",
+    " I ",
+    "   "
+  ],
+  "result": {
+    "item": "mccourse:cauliflower_seeds"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "mccourse:pink_garnet"
+    },
+    "V": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " II",
+    " V ",
+    " V "
+  ],
+  "result": {
+    "item": "mccourse:pink_garnet_hoe"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "mccourse:pink_garnet"
+    },
+    "V": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "III",
+    "IV ",
+    "   "
+  ],
+  "result": {
+    "item": "mccourse:pink_garnet_horse_armor"
+  },
+  "show_notification": true
+}

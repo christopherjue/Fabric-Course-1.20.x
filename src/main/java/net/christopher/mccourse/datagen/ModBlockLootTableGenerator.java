@@ -1,13 +1,16 @@
 package net.christopher.mccourse.datagen;
 
 import net.christopher.mccourse.block.ModBlocks;
+import net.christopher.mccourse.block.custom.CauliflowerCropBlock;
 import net.christopher.mccourse.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.DoorBlock;
+import net.minecraft.block.BlockState;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.predicate.StatePredicate;
 
-public class ModLootTableGenerator extends FabricBlockLootTableProvider {
-    public ModLootTableGenerator(FabricDataOutput dataOutput) {
+public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
+    public ModBlockLootTableGenerator(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
 
@@ -35,7 +38,12 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PINK_GARNET_FENCE);
         addDrop(ModBlocks.PINK_GARNET_FENCE_GATE);
         addDrop(ModBlocks.PINK_GARNET_TRAPDOOR);
+        addDrop(ModBlocks.CAULIFLOWER_CROP);
         addDrop(ModBlocks.PINK_GARNET_DOOR, doorDrops(ModBlocks.PINK_GARNET_DOOR));
 
+
+        BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.CAULIFLOWER_CROP)
+                .properties(StatePredicate.Builder.create().exactMatch(CauliflowerCropBlock.AGE, 6));
+        this.addDrop(ModBlocks.CAULIFLOWER_CROP, this.cropDrops(ModBlocks.CAULIFLOWER_CROP, ModItems.CAULIFLOWER, ModItems.CAULIFLOWER_SEEDS, builder2));
     }
 }

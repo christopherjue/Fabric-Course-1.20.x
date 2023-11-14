@@ -1,6 +1,7 @@
 package net.christopher.mccourse.datagen;
 
 import net.christopher.mccourse.block.ModBlocks;
+import net.christopher.mccourse.block.custom.CauliflowerCropBlock;
 import net.christopher.mccourse.block.custom.PinkGarnetLampBlock;
 import net.christopher.mccourse.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -42,6 +43,9 @@ public class ModModelProvider extends FabricModelProvider {
         registerCustomLamp(blockStateModelGenerator);
 
 
+        blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
+
+
     }
 
 
@@ -76,6 +80,6 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.PINK_GARNET_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.CREATIVE_MODE_SWORD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DATA_TABLET, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.DATA_TABLET, Models.GENERATED);
     }
 }

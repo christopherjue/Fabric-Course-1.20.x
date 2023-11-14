@@ -65,32 +65,27 @@ public class ModItems {
             new DataTabletItem(new FabricItemSettings().maxCount(1)));
 
 
+    public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
+            new AliasedBlockItem(ModBlocks.CAULIFLOWER_CROP , new  FabricItemSettings()));
 
 
 
-private static Item registerItem(String name, Item item) {
-
-    return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name),item);
-}
 
 
+
+    private static Item registerItem(String name, Item item) {
+        return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name), item);
+    }
 
     private static void itemGroupIngredients(FabricItemGroupEntries entries) {
-    entries.add(PINK_GARNET);
-    entries.add(RAW_PINK_GARNET);
-    entries.add(METAL_DETECTOR);
+        entries.add(PINK_GARNET);
+        entries.add(RAW_PINK_GARNET);
 
-    entries.add(ModBlocks.PINK_GARNET_BLOCK);
-    entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
-    entries.add(ModBlocks.PINK_GARNET_ORE);
-    entries.add(ModBlocks.NETHER_PINK_GARNET_ORE);
-    entries.add(ModBlocks.END_STONE_PINK_GARNET_ORE);
+        entries.add(ModBlocks.PINK_GARNET_BLOCK);
+        entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
+    }
 
-
-
-}
-
-    public  static void registerModItems() {
+    public static void registerModItems() {
         MCCourseMod.LOGGER.info("Registering Mod Items for " + MCCourseMod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::itemGroupIngredients);

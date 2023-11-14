@@ -3,6 +3,7 @@ package net.christopher.mccourse.block;
 import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.block.custom.PinkGarnetLampBlock;
 import net.christopher.mccourse.block.custom.SoundBlock;
+import net.christopher.mccourse.block.custom.CauliflowerCropBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -74,8 +75,18 @@ public class ModBlocks {
                     .strength(4f).requiresTool().luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15 :0)));
 
 
+    public static final Block CAULIFLOWER_CROP = registerBlockWithoutBlockItem("cauliflower_crop",
+            new CauliflowerCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
 
+    private static Block registerBlockWithoutBlockItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, new Identifier(MCCourseMod.MOD_ID, name), block);
+    }
+
+    private static Block registerblock(String name, Block block) {
+        registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, new Identifier(MCCourseMod.MOD_ID, name), block);
+    }
 
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name),

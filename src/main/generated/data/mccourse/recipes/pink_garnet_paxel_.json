@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:stick"
+    },
+    "L": {
+      "item": "mccourse:pink_garnet_shovel"
+    },
+    "O": {
+      "item": "mccourse:pink_garnet_axe"
+    },
+    "P": {
+      "item": "mccourse:pink_garnet_sword"
+    },
+    "V": {
+      "item": "mccourse:pink_garnet_pickaxe"
+    }
+  },
+  "pattern": [
+    "VOP",
+    " IL",
+    " I "
+  ],
+  "result": {
+    "item": "mccourse:pink_garnet_paxel"
+  },
+  "show_notification": true
+}

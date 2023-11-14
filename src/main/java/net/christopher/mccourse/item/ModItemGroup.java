@@ -39,6 +39,7 @@ public class ModItemGroup {
                         entries.add(ModItems.PINK_GARNET_LEGGINGS);
                         entries.add(ModItems.PINK_GARNET_BOOTS);
                         entries.add(ModItems.DATA_TABLET);
+                        entries.add(ModItems.CAULIFLOWER_SEEDS);
 
 
 

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:netherite_block"
+    },
+    "I": {
+      "item": "mccourse:pink_garnet"
+    },
+    "K": {
+      "item": "minecraft:nether_star"
+    },
+    "L": {
+      "item": "mccourse:pink_garnet_paxel"
+    },
+    "N": {
+      "item": "minecraft:dragon_egg"
+    },
+    "V": {
+      "item": "mccourse:pink_garnet_sword"
+    }
+  },
+  "pattern": [
+    "BLB",
+    "KVK",
+    "INI"
+  ],
+  "result": {
+    "item": "mccourse:creative_mode_sword"
+  },
+  "show_notification": true
+}
