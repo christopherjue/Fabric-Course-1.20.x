@@ -45,6 +45,7 @@ public class ModItemGroup {
 
 
 
+
                         entries.add(ModBlocks.PINK_GARNET_ORE);
                         entries.add(ModBlocks.DEEPSLATE_PINK_GARNET_ORE);
                         entries.add(ModBlocks.END_STONE_PINK_GARNET_ORE);
@@ -64,6 +65,9 @@ public class ModItemGroup {
                         entries.add(ModBlocks.SOUND_BLOCK);
                         entries.add(ModBlocks.PINK_GARNET_STAIRS);
                         entries.add(ModBlocks.PINK_GARNET_SLAB);
+                        entries.add(ModBlocks.PETUNIA);
+
+
 
 
                     }).build());

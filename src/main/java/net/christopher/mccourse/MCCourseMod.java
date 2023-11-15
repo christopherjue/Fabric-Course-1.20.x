@@ -4,6 +4,7 @@ import net.christopher.mccourse.block.ModBlocks;
 import net.christopher.mccourse.enchantment.ModEnchantments;
 import net.christopher.mccourse.item.ModItemGroup;
 import net.christopher.mccourse.item.ModItems;
+import net.christopher.mccourse.sound.ModSounds;
 import net.christopher.mccourse.util.ModRegistries;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,5 +24,11 @@ public class MCCourseMod implements ModInitializer {
 
 		ModRegistries.registerModStuffs();
 		ModEnchantments.registerModEnchantmnets();
+
+
+
+		ModSounds.registerSounds();
+
+
 	}
 }

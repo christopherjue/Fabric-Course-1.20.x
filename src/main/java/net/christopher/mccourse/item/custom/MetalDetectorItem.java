@@ -2,6 +2,7 @@ package net.christopher.mccourse.item.custom;
 
 import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.item.ModItems;
+import net.christopher.mccourse.sound.ModSounds;
 import net.christopher.mccourse.util.InventoryUtil;
 import net.christopher.mccourse.util.ModTags;
 import net.minecraft.block.Block;
@@ -14,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
@@ -46,6 +48,9 @@ public class MetalDetectorItem extends Item {
                     if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET)) {
                         addNBTDataToDataTablet(player, positionClicked.down(i), block);
                     }
+
+                    context.getWorld().playSound(null, positionClicked, ModSounds.METAL_DETECTOR_FOUND_ORE,
+                            SoundCategory.BLOCKS, 1f, 1f);
 
                     break;
 

@@ -29,6 +29,8 @@
   "block.mccourse.raw_pink_garnet_block": "Block of raw Pink Garnet",
   "block.mccourse.pink_garnet_ore": "Block of Pink Garnet",
   "block.mccourse.cauliflower_seeds": "Cauliflower Seeds",
+  "block.mccourse.petunia": "Petunia",
+
 
 
   "block.mccourse.data_tablet": "Data Tablet",
@@ -62,8 +64,15 @@
 
 
 
+
+
+
+
   "enchantment.mccourse.lightning_striker": "Lightning Striker",
 
 
-  "itemgroup.pink_garnet_group": "Pink Garnet Course Group"
+  "itemgroup.pink_garnet_group": "Pink Garnet Course Group",
+
+
+ "sounds.mccourse.metal_detector_found_ore": "Metal Detector Found an Ore"
 }
