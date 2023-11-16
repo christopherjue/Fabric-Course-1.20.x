@@ -22,6 +22,10 @@ public class ModItemGroup {
                         entries.add(ModItems.METAL_DETECTOR);
                         entries.add(ModItems.PEAT_BRICK);
                         entries.add(ModItems.CREATIVE_MODE_SWORD);
+                        entries.add(ModItems.BAR_BRAWL_MUSIC_DISC);
+                        entries.add(ModBlocks.GEM_EMPOWERING_STATION);
+
+
 
 
 
@@ -32,6 +36,10 @@ public class ModItemGroup {
                         entries.add(ModItems.PINK_GARNET_HOE);
                         entries.add(ModItems.PINK_GARNET_PAXEL);
                         entries.add(ModItems.PINK_GARNET_HORSE_ARMOR);
+
+                        entries.add(ModItems.RADIATION_STAFF);
+                        entries.add(ModItems.PINK_GARNET_BOW);
+                        entries.add(ModItems.PINK_GARNET_SHIELD);
 
 
                         entries.add(ModItems.PINK_GARNET_HELMET);

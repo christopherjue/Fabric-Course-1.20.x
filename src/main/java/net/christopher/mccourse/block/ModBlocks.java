@@ -1,9 +1,11 @@
 package net.christopher.mccourse.block;
 
 import net.christopher.mccourse.MCCourseMod;
+import net.christopher.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.christopher.mccourse.block.custom.PinkGarnetLampBlock;
 import net.christopher.mccourse.block.custom.SoundBlock;
 import net.christopher.mccourse.block.custom.CauliflowerCropBlock;
+import net.christopher.mccourse.sound.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -73,7 +75,8 @@ public class ModBlocks {
 
     public static final Block PINK_GARNET_LAMP_BLOCK = registerBlock("pink_garnet_lamp_block",
             new PinkGarnetLampBlock(FabricBlockSettings.create().mapColor(MapColor.RAW_IRON_PINK).instrument(Instrument.BASEDRUM)
-                    .strength(4f).requiresTool().luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15 :0)));
+                    .strength(4f).requiresTool().luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15 :0)
+                    .sounds(ModSounds.PINK_GARNET_LAMP_SOUNDS)));
 
 
     public static final Block CAULIFLOWER_CROP = registerBlockWithoutBlockItem("cauliflower_crop",
@@ -81,6 +84,9 @@ public class ModBlocks {
 
     public static final Block  PETUNIA = registerBlock("petunia",
             new FlowerBlock(StatusEffects.SPEED, 400,  FabricBlockSettings.copyOf(Blocks.ALLIUM)));
+
+    public static final Block  GEM_EMPOWERING_STATION = registerBlock("gem_empowering_station",
+            new GemEmpoweringStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     public static final Block POTTED_PETUNIA = registerBlockWithoutBlockItem("potted_petunia",
             new FlowerPotBlock(PETUNIA,  FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));

@@ -24,7 +24,7 @@ public class ModRegistries {
         FuelRegistry registry = FuelRegistry.INSTANCE;
 
 
-        registry.add(ModItems.PEAT_BRICK, 900);
+        registry.add(ModItems.PEAT_BRICK, 9000000);
 
     }
 

@@ -207,6 +207,36 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.CAULIFLOWER), conditionsFromItem(ModItems.CAULIFLOWER))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.CAULIFLOWER_SEEDS) + "_"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.GEM_EMPOWERING_STATION)
+                .pattern("VIV")
+                .pattern("III")
+                .pattern("IHI")
+                .input('V', Items.POLISHED_BLACKSTONE)
+                .input('I', Items.CALCITE)
+                .input('H', ModItems.PINK_GARNET)
+                .criterion(hasItem(Items.CALCITE), conditionsFromItem(Items.CALCITE))
+                .criterion(hasItem(Items.POLISHED_BLACKSTONE), conditionsFromItem(Items.POLISHED_BLACKSTONE))
+                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GEM_EMPOWERING_STATION) + "_"));
+
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PINK_GARNET_BOW)
+                .pattern("DWS")
+                .pattern("PNS")
+                .pattern("DWS")
+                .input('D', Items.DIAMOND_BLOCK)
+                .input('W', Items.WARPED_PLANKS)
+                .input('N', Items.NETHERITE_INGOT)
+                .input('S', Items.STRING)
+                .input('P', ModItems.PINK_GARNET)
+                .criterion(hasItem(Items.WARPED_PLANKS), conditionsFromItem(Items.WARPED_PLANKS))
+                .criterion(hasItem(Items.DIAMOND_BLOCK), conditionsFromItem(Items.DIAMOND_BLOCK))
+                .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.PINK_GARNET_BOW) + "_"));
+
 
 
 

@@ -3,6 +3,7 @@ package net.christopher.mccourse.item;
 import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.block.ModBlocks;
 import net.christopher.mccourse.item.custom.*;
+import net.christopher.mccourse.sound.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -57,6 +58,20 @@ public class ModItems {
 
     public static final Item PINK_GARNET_HORSE_ARMOR = registerItem("pink_garnet_horse_armor",
             new HorseArmorItem(14, "pink_garnet", new FabricItemSettings()));
+
+
+    public static final Item BAR_BRAWL_MUSIC_DISC = registerItem("bar_brawl_music_disc",
+            new MusicDiscItem(9, ModSounds.BAR_BRAWL, new FabricItemSettings().maxCount(1), 122));
+
+    public static final Item RADIATION_STAFF = registerItem("radiation_staff",
+            new Item(new FabricItemSettings()));
+
+    public static final Item PINK_GARNET_BOW = registerItem("pink_garnet_bow",
+            new BowItem(new FabricItemSettings().maxDamage(2500)));
+
+    public static final Item PINK_GARNET_SHIELD = registerItem("pink_garnet_shield",
+            new ShieldItem(new FabricItemSettings().maxDamage(2500)));
+
 
     public static final  Item  CREATIVE_MODE_SWORD = registerItem("creative_mode_sword",
             new ModBestEffectCreativeSwordItem(ModToolMaterial.PINK_GARNET, 5, -1f,new FabricItemSettings()));
