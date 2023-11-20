@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-16T14:56:08.8013786	MC Course Mod/Recipes
+// 1.20.2	2023-11-19T18:21:55.9617409	MC Course Mod/Recipes
 107b2cdbe4d9259b8832df2c78e26f6f9aa2350b data\mccourse\recipes\pink_garnet_block.json
 36b8466d17af3ba84e0f662bc64626da2abf1cae data\mccourse\advancements\recipes\misc\pink_garnet_from_smelting_nether_pink_garnet_ore.json
 c996d9e97dbe4ff74d76650b2f76ce7d6658066e data\mccourse\advancements\recipes\misc\pink_garnet_chestplate_.json
@@ -56,7 +56,7 @@ b97aab792f06901bb0c6bcfd44647ae1f74ed594 data\mccourse\advancements\recipes\misc
 c2d245fbdaad9c661291cc1ecbd39d70532d5f0f data\mccourse\advancements\recipes\misc\pink_garnet_hoe_.json
 46225196eaaabf7ccd5cc2f7c394c081b08b5ec3 data\mccourse\recipes\gem_empowering_station_.json
 b32a02d8d1fd9127d058687819d0c659fa929b1a data\mccourse\recipes\pink_garnet_helmet_.json
-94b05f48d60754b937d8606d1fff8113a9ed27ea data\mccourse\recipes\pink_garnet_paxel_.json
+c06410a2761053223315465aff2d5043c88792d7 data\mccourse\recipes\pink_garnet_paxel_.json
 6ca328d026845ae20901dc37c520c084feeb2e4c data\mccourse\advancements\recipes\misc\pink_garnet_helmet_.json
 9825f9e7c781e93a471ed0cc5b327f6fc871364d data\mccourse\advancements\recipes\misc\pink_garnet_from_blasting_deepslate_pink_garnet_ore.json
 088bc2871b8c10e0d8c30ecf83d5a730032ab06d data\mccourse\recipes\pink_garnet_hoe_.json

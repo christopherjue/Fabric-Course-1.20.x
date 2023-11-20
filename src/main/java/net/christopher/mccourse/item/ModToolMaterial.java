@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
     public enum ModToolMaterial implements ToolMaterial {
 
-    PINK_GARNET(5, 3700, 20.0f, 7.0f, 30, () -> Ingredient.ofItems(ModItems.PINK_GARNET));
+    PINK_GARNET(5, 785000, 20.0f, 7.0f, 30, () -> Ingredient.ofItems(ModItems.PINK_GARNET));
 
     private final int miningLevel;
     private final int itemDurability;

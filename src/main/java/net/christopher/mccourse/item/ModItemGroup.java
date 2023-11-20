@@ -2,6 +2,7 @@ package net.christopher.mccourse.item;
 
 import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.block.ModBlocks;
+import net.christopher.mccourse.fluid.ModFluids;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -40,6 +41,9 @@ public class ModItemGroup {
                         entries.add(ModItems.RADIATION_STAFF);
                         entries.add(ModItems.PINK_GARNET_BOW);
                         entries.add(ModItems.PINK_GARNET_SHIELD);
+
+
+                        entries.add(ModFluids.SOAP_WATER_BUCKET);
 
 
                         entries.add(ModItems.PINK_GARNET_HELMET);

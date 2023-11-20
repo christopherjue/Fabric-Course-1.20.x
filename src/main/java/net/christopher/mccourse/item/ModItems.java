@@ -39,7 +39,7 @@ public class ModItems {
             new ModSlownessHoeItem(ModToolMaterial.PINK_GARNET, 10, -2.98f, new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_PICKAXE= registerItem("pink_garnet_pickaxe",
-            new PickaxeItem(ModToolMaterial.PINK_GARNET, 3, -3.9f, new FabricItemSettings()));
+            new PickaxeItem(ModToolMaterial.PINK_GARNET, 3, -2f, new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_PAXEL= registerItem("pink_garnet_paxel",
             new PaxelItem(ModToolMaterial.PINK_GARNET, 5, -3f, new FabricItemSettings()));
@@ -60,6 +60,8 @@ public class ModItems {
             new HorseArmorItem(14, "pink_garnet", new FabricItemSettings()));
 
 
+
+
     public static final Item BAR_BRAWL_MUSIC_DISC = registerItem("bar_brawl_music_disc",
             new MusicDiscItem(9, ModSounds.BAR_BRAWL, new FabricItemSettings().maxCount(1), 122));
 
@@ -70,7 +72,9 @@ public class ModItems {
             new BowItem(new FabricItemSettings().maxDamage(2500)));
 
     public static final Item PINK_GARNET_SHIELD = registerItem("pink_garnet_shield",
-            new ShieldItem(new FabricItemSettings().maxDamage(2500)));
+            new ShieldItem(new FabricItemSettings().maxDamage(900000)));
+
+
 
 
     public static final  Item  CREATIVE_MODE_SWORD = registerItem("creative_mode_sword",

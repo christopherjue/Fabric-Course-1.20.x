@@ -89,10 +89,10 @@ public enum ModArmorMaterials implements ArmorMaterial {
     static {
         CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
         BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), map -> {
-            map.put(ArmorItem.Type.BOOTS, 13);
-            map.put(ArmorItem.Type.LEGGINGS, 15);
-            map.put(ArmorItem.Type.CHESTPLATE, 16);
-            map.put(ArmorItem.Type.HELMET, 11);
+            map.put(ArmorItem.Type.BOOTS, 5000);
+            map.put(ArmorItem.Type.LEGGINGS, 5000);
+            map.put(ArmorItem.Type.CHESTPLATE, 5000);
+            map.put(ArmorItem.Type.HELMET, 5000);
         });
     }
 }

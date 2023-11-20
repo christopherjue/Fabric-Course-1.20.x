@@ -12,10 +12,10 @@
       "item": "mccourse:pink_garnet_axe"
     },
     "P": {
-      "item": "mccourse:pink_garnet_sword"
+      "item": "mccourse:pink_garnet_pickaxe"
     },
     "V": {
-      "item": "mccourse:pink_garnet_pickaxe"
+      "item": "mccourse:pink_garnet_sword"
     }
   },
   "pattern": [
