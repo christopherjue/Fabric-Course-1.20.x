@@ -10,7 +10,7 @@ public class ModFoodComponents {
     public static final FoodComponent CAULIFLOWER = new FoodComponent.Builder().hunger(10).saturationModifier(1.5f)
             .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 500, 5), 1.0f)
             .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 900, 0), 1.0f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 1000, 3), 1.0f)
+
             .alwaysEdible().build();
 
     public static final FoodComponent STRENGTHFOOD = new FoodComponent.Builder().hunger(25).saturationModifier(15f).statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 14000, 2), 1.0f).alwaysEdible().build();

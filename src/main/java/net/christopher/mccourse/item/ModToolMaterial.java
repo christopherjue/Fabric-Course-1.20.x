@@ -24,7 +24,7 @@ import java.util.function.Supplier;
     private ModToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
-        this.miningSpeed = miningSpeed;
+        this.miningSpeed = miningSpeed + 15;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
         this.repairIngredient = new Lazy<Ingredient>(repairIngredient);

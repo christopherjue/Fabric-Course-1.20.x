@@ -1,5 +1,6 @@
 package net.christopher.mccourse;
 
+import net.christopher.mccourse.block.entity.ModBlockEntities;
 import net.fabricmc.api.ModInitializer;
 
 import net.christopher.mccourse.block.ModBlocks;
@@ -44,5 +45,7 @@ public class MCCourseMod implements ModInitializer {
 
 		ModVillagers.registerVillagers();
 		ModFluids.registerFluids();
+
+		ModBlockEntities.registerBlockEntities();
 	}
 }
