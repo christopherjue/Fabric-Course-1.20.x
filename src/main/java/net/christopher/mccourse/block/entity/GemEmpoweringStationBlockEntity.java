@@ -1,6 +1,7 @@
 package net.christopher.mccourse.block.entity;
 
 import net.christopher.mccourse.item.ModItems;
+import net.christopher.mccourse.screen.GemEmpoweringScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -76,7 +77,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return
+        return new GemEmpoweringScreenHandler(syncId, playerInventory, this, propertyDelegate);
     }
 
     @Override
@@ -117,7 +118,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
 
     private void craftItem() {
         this.removeStack(INPUT_SLOT, 1);
-        this.setStack(OUTPUT_SLOT, new ItemStack(this.getStack(OUTPUT_SLOT).getItem(),
+        this.setStack(OUTPUT_SLOT, new ItemStack(ModItems.PINK_GARNET,
                 this.getStack(OUTPUT_SLOT).getCount() + 1));
     }
 

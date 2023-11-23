@@ -93,9 +93,9 @@ public class ModRegistries {
         TradeOfferHelper.registerVillagerOffers(ModVillagers.SOUND_MASTER, 1,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.NETHERITE_BLOCK, 5),
-                            new ItemStack(Items.DIAMOND_BLOCK, 25),
-                            new ItemStack(ModItems.PINK_GARNET, 3), 1, 50, 0.03f
+                            new ItemStack(Items.NETHERITE_SCRAP, 2),
+                            new ItemStack(Items.EMERALD, 25),
+                            new ItemStack(ModItems.PINK_GARNET, 3), 1, 50, 1.5f
 
 
 

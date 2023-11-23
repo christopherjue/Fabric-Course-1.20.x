@@ -56,6 +56,20 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PINK_GARNET_PRESSURE_PLATE) + "_"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.SOUND_BLOCK)
+                .pattern("WBW")
+                .pattern("WPW")
+                .pattern("WBW")
+
+                .input('P', ModItems.PINK_GARNET)
+                .input('W', Items.WHITE_CONCRETE)
+                .input('B', Items.BLACK_CONCRETE)
+
+                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .criterion(hasItem(Items.BLACK_CONCRETE), conditionsFromItem(Items.BLACK_CONCRETE))
+                .criterion(hasItem(Items.BLACK_CONCRETE), conditionsFromItem(Items.WHITE_CONCRETE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.SOUND_BLOCK) + "_"));
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PINK_GARNET_BUTTON)
                 .pattern("   ")
                 .pattern("   ")

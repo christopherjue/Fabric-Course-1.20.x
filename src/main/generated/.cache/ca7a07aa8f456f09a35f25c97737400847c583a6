@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-19T18:21:55.956739	MC Course Mod/Model Definitions
+// 1.20.2	2023-11-21T14:08:56.07323	MC Course Mod/Model Definitions
 2619c255114a76ce3c8b44300c75787ce03c5cf2 assets\mccourse\models\item\cauliflower_seeds.json
 220585e1750e3df2582996b9a00d51381a57eaf5 assets\mccourse\models\block\potted_petunia.json
 2ed45ac02347d724f5fbb8ca0f61e52a0d3a77af assets\mccourse\models\item\pink_garnet_helmet_redstone_trim.json
@@ -71,8 +71,8 @@ a90d995e4268516359efc932a8d15d9ca59c1018 assets\mccourse\models\item\nether_pink
 cba69c051c345a7ad11f32a048e510fdbc635638 assets\mccourse\models\item\pink_garnet_boots_copper_trim.json
 7349e733a5211318ce6f17486706b6ea7bfd6cf3 assets\mccourse\blockstates\pink_garnet_button.json
 c9332c4526d5bd50b026269b08d30e37fe010b21 assets\mccourse\models\item\pink_garnet_leggings_emerald_trim.json
-03776dc6cb4d91593ef73c164fa170a169e4ce68 assets\mccourse\models\item\pink_garnet_trapdoor.json
 db6a991d53083ae4e0754dc52787b2124b8ffb09 assets\mccourse\blockstates\pink_garnet_pressure_plate.json
+03776dc6cb4d91593ef73c164fa170a169e4ce68 assets\mccourse\models\item\pink_garnet_trapdoor.json
 a340c91d46a2fba2a3ccfc50e22319fb298557f5 assets\mccourse\models\block\pink_garnet_button_inventory.json
 5cddb15b4051ce5429b03da2199012d3e79dafff assets\mccourse\models\item\pink_garnet_leggings_redstone_trim.json
 9fc2b1c4972ee878386b7af3f14fbe411677a71b assets\mccourse\models\item\pink_garnet_chestplate_emerald_trim.json
