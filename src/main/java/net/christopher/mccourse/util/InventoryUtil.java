@@ -28,6 +28,12 @@ public class InventoryUtil {
     }
 
 
+
+
+
+    // error log
+
+
     /*
     A problem occurred configuring root project 'mc-course-template-1.20.2'.
 > Could not resolve all files for configuration ':modCompileOnly'.
