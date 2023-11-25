@@ -1,0 +1,11 @@
+{
+  "type": "mccourse:gem_empowering",
+  "ingredients": [
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "output": {
+    "item": "minecraft:ender_eye"
+  }
+}

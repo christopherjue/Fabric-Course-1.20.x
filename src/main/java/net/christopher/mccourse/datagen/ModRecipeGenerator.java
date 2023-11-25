@@ -1,6 +1,7 @@
 package net.christopher.mccourse.datagen;
 
 import net.christopher.mccourse.block.ModBlocks;
+import net.christopher.mccourse.datagen.recipe.GemEmpoweringRecipeBuilder;
 import net.christopher.mccourse.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -272,5 +273,20 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         offerBlasting(exporter, List.of(ModItems.RAW_PINK_GARNET, ModBlocks.PINK_GARNET_ORE, ModBlocks.DEEPSLATE_PINK_GARNET_ORE,
                         ModBlocks.NETHER_PINK_GARNET_ORE, ModBlocks.END_STONE_PINK_GARNET_ORE), RecipeCategory.MISC, ModItems.PINK_GARNET,
                 0.25f, 10, "pink_garnet");
+
+
+        new GemEmpoweringRecipeBuilder(ModItems.RAW_PINK_GARNET, ModItems.PINK_GARNET, 3)
+                .criterion(hasItem(ModItems.RAW_PINK_GARNET), conditionsFromItem(ModItems.RAW_PINK_GARNET))
+                .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.STICK, Items.END_ROD, 1)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.BLAZE_POWDER, Items.ENDER_EYE, 1)
+                .criterion(hasItem(Items.BLAZE_POWDER), conditionsFromItem(Items.BLAZE_POWDER))
+                .offerTo(exporter);
+
+
     }
 }

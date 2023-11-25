@@ -60,6 +60,10 @@ public class ModItems {
             new HorseArmorItem(14, "pink_garnet", new FabricItemSettings()));
 
 
+    public static final  Item BEST_FOOD_IN_MINECRAFT = registerItem("best_food_in_minecraft",
+            new Item(new FabricItemSettings().food(ModFoodComponents.BEST_FOOD_IN_MINECRAFT)));
+
+
 
 
     public static final Item BAR_BRAWL_MUSIC_DISC = registerItem("bar_brawl_music_disc",
@@ -69,10 +73,10 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item PINK_GARNET_BOW = registerItem("pink_garnet_bow",
-            new BowItem(new FabricItemSettings().maxDamage(2500)));
+            new BowItem(new FabricItemSettings().maxDamage(5515)));
 
     public static final Item PINK_GARNET_SHIELD = registerItem("pink_garnet_shield",
-            new ShieldItem(new FabricItemSettings().maxDamage(900000)));
+            new ShieldItem(new FabricItemSettings().maxDamage(5000)));
 
 
 

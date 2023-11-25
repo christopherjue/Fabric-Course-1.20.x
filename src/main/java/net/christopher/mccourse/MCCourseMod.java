@@ -1,6 +1,7 @@
 package net.christopher.mccourse;
 
 import net.christopher.mccourse.block.entity.ModBlockEntities;
+import net.christopher.mccourse.recipe.ModRecipes;
 import net.christopher.mccourse.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
@@ -50,5 +51,8 @@ public class MCCourseMod implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 
 		ModScreenHandlers.registerScreenHandler();
+
+
+		ModRecipes.registerRecipes();
 	}
 }

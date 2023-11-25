@@ -3,6 +3,8 @@
   "item.mccourse.raw_pink_garnet": "Raw pink Garnet",
   "item.mccourse.metal_detector": "Metal Detector",
   "item.mccourse.cauliflower": "Cauliflower",
+
+  "item.mccourse.best_food_in_minecraft": "Best Food In Minecraft",
   "item.mccourse.strengthfood": "Food for pvp 1",
   "item.mccourse.speedfood": "Food for pvp 2",
   "item.mccourse.peat_brick": "Peat Brick",
@@ -27,6 +29,9 @@
   "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
   "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
   "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Lingering Potion",
+
+
+
 
   "item.mccourse.soap_water_bucket": "Soap Water Bucket",
 

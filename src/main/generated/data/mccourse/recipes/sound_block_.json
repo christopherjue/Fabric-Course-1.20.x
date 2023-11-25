@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:black_concrete"
+    },
+    "P": {
+      "item": "mccourse:pink_garnet"
+    },
+    "W": {
+      "item": "minecraft:white_concrete"
+    }
+  },
+  "pattern": [
+    "WBW",
+    "WPW",
+    "WBW"
+  ],
+  "result": {
+    "item": "mccourse:sound_block"
+  },
+  "show_notification": true
+}

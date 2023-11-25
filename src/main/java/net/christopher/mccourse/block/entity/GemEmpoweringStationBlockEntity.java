@@ -1,16 +1,21 @@
 package net.christopher.mccourse.block.entity;
 
-import net.christopher.mccourse.item.ModItems;
-import net.christopher.mccourse.screen.GemEmpoweringScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.fabricmc.tinyremapper.OutputConsumerPath;
+import net.christopher.mccourse.item.ModItems;
+import net.christopher.mccourse.recipe.GemEmpoweringRecipe;
+import net.christopher.mccourse.screen.GemEmpoweringScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -20,18 +25,19 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class GemEmpoweringStationBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplmentedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 
-    public static final int INPUT_SLOT = 0;
-    public static final int FLUID_ITEM_SLOT = 1;
-    public static final int OUTPUT_SLOT = 2;
-    public static final int ENERGY_ITEM_SLOT = 3;
+    private static final int INPUT_SLOT = 0;
+    private static final int FLUID_ITEM_SLOT = 1;
+    private static final int OUTPUT_SLOT = 2;
+    private static final int ENERGY_ITEM_SLOT = 3;
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
-
 
     public GemEmpoweringStationBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.GEM_EMPOWERING_STATION_BE, pos, state);
@@ -48,12 +54,9 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
             @Override
             public void set(int index, int value) {
                 switch (index) {
-                    case 0:
-                        GemEmpoweringStationBlockEntity.this.progress = value;
-                    case 1:
-                        GemEmpoweringStationBlockEntity.this.maxProgress = value;
+                    case 0: GemEmpoweringStationBlockEntity.this.progress = value;
+                    case 1: GemEmpoweringStationBlockEntity.this.maxProgress = value;
                 }
-
             }
 
             @Override
@@ -66,7 +69,6 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     @Override
     public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
         buf.writeBlockPos(this.pos);
-
     }
 
     @Override
@@ -92,37 +94,37 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
         nbt.putInt("gem_empowering_station.progress", progress);
     }
 
-
     @Override
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         progress = nbt.getInt("gem_empowering_station.progress");
         super.readNbt(nbt);
-
-
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {
-        if (canInsertIntoOutputSlot() && hasRecipe()) {
+        if(canInsertIntoOutputSlot() && hasRecipe()) {
             increaseCraftingProgress();
             markDirty(world, pos, state);
 
-            if (hasCraftingFinished()) {
+            if(hasCraftingFinished()) {
                 craftItem();
-                restProgress();
+                resetProgress();
             }
-        }else{
-           restProgress();
+        } else {
+            resetProgress();
         }
     }
 
     private void craftItem() {
+        Optional<RecipeEntry<GemEmpoweringRecipe>> recipe = getCurrentRecipe();
+
         this.removeStack(INPUT_SLOT, 1);
-        this.setStack(OUTPUT_SLOT, new ItemStack(ModItems.PINK_GARNET,
-                this.getStack(OUTPUT_SLOT).getCount() + 1));
+
+        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
+                this.getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
     }
 
-    private void restProgress() {
+    private void resetProgress() {
         this.progress = 0;
     }
 
@@ -135,12 +137,36 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     }
 
     private boolean hasRecipe() {
-        return this.getStack(INPUT_SLOT).getItem() == ModItems.RAW_PINK_GARNET;
+        Optional<RecipeEntry<GemEmpoweringRecipe>> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+        ItemStack output = recipe.get().value().getResult(null);
+
+        return canInsertAmountIntoOutputSlot(output.getCount())
+                && canInsertItemIntoOutputSlot(output);
+    }
+
+    private boolean canInsertItemIntoOutputSlot(ItemStack output) {
+        return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getItem() == output.getItem();
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(int count) {
+        return this.getStack(OUTPUT_SLOT).getMaxCount() >= this.getStack(OUTPUT_SLOT).getCount() + count;
+    }
+
+    private Optional<RecipeEntry<GemEmpoweringRecipe>> getCurrentRecipe() {
+        SimpleInventory inventory = new SimpleInventory((this.size()));
+        for(int i = 0; i < this.size(); i++) {
+            inventory.setStack(i, this.getStack(i));
+        }
+
+        return this.getWorld().getRecipeManager().getFirstMatch(GemEmpoweringRecipe.Type.INSTANCE, inventory, this.getWorld());
     }
 
     private boolean canInsertIntoOutputSlot() {
         return this.getStack(OUTPUT_SLOT).isEmpty() ||
                 this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
-
     }
 }
