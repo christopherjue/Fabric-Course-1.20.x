@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "mccourse:pink_garnet"
+    }
+  },
+  "pattern": [
+    "   ",
+    "PPP",
+    "PPP"
+  ],
+  "result": {
+    "item": "mccourse:pink_garnet_trapdoor"
+  },
+  "show_notification": true
+}

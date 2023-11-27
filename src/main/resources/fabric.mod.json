@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"net.christopher.mccourse.MCCourseModClient"
+		],
+		"rei_client": [
+			"net.christopher.mccourse.compat.MCCourseModREIClientPlugin"
 		]
 	},
 	"mixins": [

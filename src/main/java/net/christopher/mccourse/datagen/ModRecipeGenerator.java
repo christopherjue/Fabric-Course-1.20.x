@@ -252,6 +252,22 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.PINK_GARNET_BOW) + "_"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PINK_GARNET_DOOR)
+                .pattern(" PP")
+                .pattern(" PP")
+                .pattern(" PP")
+                .input('P', ModItems.PINK_GARNET)
+                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PINK_GARNET_DOOR) + "_"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PINK_GARNET_TRAPDOOR)
+                .pattern("   ")
+                .pattern("PPP")
+                .pattern("PPP")
+                .input('P', ModItems.PINK_GARNET)
+                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PINK_GARNET_TRAPDOOR) + "_"));
+
 
 
 

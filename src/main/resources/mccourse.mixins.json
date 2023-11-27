@@ -1,5 +1,5 @@
 {
-	"required": false,
+	"required": true,
 	"package": "net.christopher.mccourse.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
@@ -13,7 +13,6 @@
 		"ItemRendererMixin",
 		"ModelLoaderMixin"
 	],
-
 	"injectors": {
 		"defaultRequire": 1
 	}

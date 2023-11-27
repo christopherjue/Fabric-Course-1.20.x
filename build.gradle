@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.4-SNAPSHOT'
+	id 'fabric-loom' version '1.2-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -20,7 +20,7 @@ repositories {
 }
 
 loom {
-    runs {
+	runs {
 		// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
 		datagen {
 			inherit server
@@ -33,6 +33,7 @@ loom {
 		}
 	}
 }
+
 
 // Add the generated resources to the main source set
 sourceSets {
@@ -53,8 +54,8 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:13.0.678"
-	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:13.0.678"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:12.0.625"
+	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:12.0.625"
 
 	// Uncomment the following line to enable the deprecated Fabric API modules.
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
@@ -86,7 +87,7 @@ java {
 
 jar {
 	from("LICENSE") {
-		rename { "${it}_${project.base.archivesName.get()}"}
+		rename { "${it}_${project.archivesBaseName}"}
 	}
 }
 
