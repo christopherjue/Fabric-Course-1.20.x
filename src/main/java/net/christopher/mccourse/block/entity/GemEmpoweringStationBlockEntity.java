@@ -1,13 +1,15 @@
 package net.christopher.mccourse.block.entity;
 
+import net.christopher.mccourse.screen.GemEmpoweringScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.fabricmc.tinyremapper.OutputConsumerPath;
 import net.christopher.mccourse.item.ModItems;
 import net.christopher.mccourse.recipe.GemEmpoweringRecipe;
-import net.christopher.mccourse.screen.GemEmpoweringScreenHandler;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.christopher.mccourse.screen.GemEmpoweringScreen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
