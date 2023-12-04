@@ -12,8 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class PinkGarnetLampBlock extends Block {
-        public static final BooleanProperty CLICKED = BooleanProperty.of("clicked");
-
+    public static final BooleanProperty CLICKED = BooleanProperty.of("clicked");
 
     public PinkGarnetLampBlock(Settings settings) {
         super(settings);
@@ -23,10 +22,10 @@ public class PinkGarnetLampBlock extends Block {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
-
-        if (!world.isClient() && hand == Hand.MAIN_HAND) {
+        if(!world.isClient() && hand == Hand.MAIN_HAND) {
             world.setBlockState(pos, state.cycle(CLICKED));
         }
+
         return ActionResult.SUCCESS;
     }
 

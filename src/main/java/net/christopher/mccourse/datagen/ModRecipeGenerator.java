@@ -5,7 +5,8 @@ import net.christopher.mccourse.datagen.recipe.GemEmpoweringRecipeBuilder;
 import net.christopher.mccourse.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeExporter;
+
+import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -14,6 +15,7 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ModRecipeGenerator extends FabricRecipeProvider {
     public ModRecipeGenerator(FabricDataOutput output) {
@@ -21,7 +23,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(RecipeExporter exporter) {
+    public void generate(Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_PINK_GARNET)
                 .pattern("SSS")
                 .pattern("SPS")
@@ -68,7 +70,6 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
                 .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
                 .criterion(hasItem(Items.BLACK_CONCRETE), conditionsFromItem(Items.BLACK_CONCRETE))
-                .criterion(hasItem(Items.BLACK_CONCRETE), conditionsFromItem(Items.WHITE_CONCRETE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.SOUND_BLOCK) + "_"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PINK_GARNET_BUTTON)
@@ -204,7 +205,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.PINK_GARNET_HORSE_ARMOR) + "_"));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PINK_GARNET_HOE)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PINK_GARNET_SCYTHE)
                 .pattern(" II")
                 .pattern(" V ")
                 .pattern(" V ")
@@ -212,7 +213,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', ModItems.PINK_GARNET)
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.PINK_GARNET_HOE) + "_"));
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.PINK_GARNET_SCYTHE) + "_"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CAULIFLOWER_SEEDS)
                 .pattern("   ")
@@ -225,13 +226,13 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.GEM_EMPOWERING_STATION)
                 .pattern("VIV")
                 .pattern("III")
-                .pattern("IHI")
+                .pattern("IGI")
                 .input('V', Items.POLISHED_BLACKSTONE)
                 .input('I', Items.CALCITE)
-                .input('H', ModItems.PINK_GARNET)
+                .input('G', Items.GLASS)
                 .criterion(hasItem(Items.CALCITE), conditionsFromItem(Items.CALCITE))
                 .criterion(hasItem(Items.POLISHED_BLACKSTONE), conditionsFromItem(Items.POLISHED_BLACKSTONE))
-                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .criterion(hasItem(Items.GLASS), conditionsFromItem(Items.GLASS))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GEM_EMPOWERING_STATION) + "_"));
 
 
@@ -291,7 +292,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 0.25f, 10, "pink_garnet");
 
 
-        new GemEmpoweringRecipeBuilder(ModItems.RAW_PINK_GARNET, ModItems.PINK_GARNET, 3)
+        new GemEmpoweringRecipeBuilder(ModItems.RAW_PINK_GARNET, ModItems.PINK_GARNET, 6)
                 .criterion(hasItem(ModItems.RAW_PINK_GARNET), conditionsFromItem(ModItems.RAW_PINK_GARNET))
                 .offerTo(exporter);
 
@@ -302,6 +303,28 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         new GemEmpoweringRecipeBuilder(Items.BLAZE_POWDER, Items.ENDER_EYE, 1)
                 .criterion(hasItem(Items.BLAZE_POWDER), conditionsFromItem(Items.BLAZE_POWDER))
                 .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.COAL, Items.DIAMOND, 1)
+                .criterion(hasItem(Items.COAL), conditionsFromItem(Items.COAL))
+                .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.OBSIDIAN, Items.CRYING_OBSIDIAN, 4)
+                .criterion(hasItem(Items.OBSIDIAN), conditionsFromItem(Items.OBSIDIAN))
+                .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.GHAST_TEAR, Items.END_CRYSTAL, 1)
+                .criterion(hasItem(Items.GHAST_TEAR), conditionsFromItem(Items.GHAST_TEAR))
+                .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.GUNPOWDER, Items.TNT, 10)
+                .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.TNT, Items.TNT_MINECART, 10)
+                .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
+                .offerTo(exporter);
+
+
 
 
     }

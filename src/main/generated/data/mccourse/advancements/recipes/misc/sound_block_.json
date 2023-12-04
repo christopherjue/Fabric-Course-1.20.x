@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:white_concrete"
+              "minecraft:black_concrete"
             ]
           }
         ]
@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_pink_garnet",
-      "has_black_concrete"
+      "has_black_concrete",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

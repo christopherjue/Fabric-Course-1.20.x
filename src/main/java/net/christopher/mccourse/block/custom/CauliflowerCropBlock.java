@@ -11,6 +11,7 @@ import net.minecraft.state.property.IntProperty;
 public class CauliflowerCropBlock extends CropBlock {
     public static final int MAX_AGE = 6;
     public static final IntProperty AGE = IntProperty.of("age", 0, 6);
+
     public CauliflowerCropBlock(Settings settings) {
         super(settings);
     }

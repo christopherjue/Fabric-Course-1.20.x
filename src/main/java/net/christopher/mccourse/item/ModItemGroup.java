@@ -34,13 +34,17 @@ public class ModItemGroup {
                         entries.add(ModItems.PINK_GARNET_AXE);
                         entries.add(ModItems.PINK_GARNET_PICKAXE);
                         entries.add(ModItems.PINK_GARNET_SHOVEL);
-                        entries.add(ModItems.PINK_GARNET_HOE);
+                        entries.add(ModItems.PINK_GARNET_SCYTHE);
                         entries.add(ModItems.PINK_GARNET_PAXEL);
                         entries.add(ModItems.PINK_GARNET_HORSE_ARMOR);
 
                         entries.add(ModItems.RADIATION_STAFF);
                         entries.add(ModItems.PINK_GARNET_BOW);
                         entries.add(ModItems.PINK_GARNET_SHIELD);
+
+                        entries.add(ModItems.DRIFTWOOD_SIGN);
+                        entries.add(ModItems.DRIFTWOOD_HANGING_SIGN);
+
 
 
                         entries.add(ModFluids.SOAP_WATER_BUCKET);
@@ -75,6 +79,16 @@ public class ModItemGroup {
 
 
                         entries.add(ModBlocks.SOUND_BLOCK);
+
+                        entries.add(ModBlocks.DRIFTWOOD_LEAVES);
+                        entries.add(ModBlocks.DRIFTWOOD_PLANKS);
+                        entries.add(ModBlocks.DRIFTWOOD_LOG);
+                        entries.add(ModBlocks.DRIFTWOOD_SAPLING);
+                        entries.add(ModBlocks.DRIFTWOOD_WOOD);
+                        entries.add(ModBlocks.STRIPPED_DRIFTWOOD_LOG);
+                        entries.add(ModBlocks.STRIPPED_DRIFTWOOD_WOOD);
+
+
                         entries.add(ModBlocks.PINK_GARNET_STAIRS);
                         entries.add(ModBlocks.PINK_GARNET_SLAB);
                         entries.add(ModBlocks.PETUNIA);

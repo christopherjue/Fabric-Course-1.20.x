@@ -5,6 +5,7 @@ import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
 import me.shedaniel.rei.api.common.util.EntryStacks;
+import net.christopher.mccourse.compat.GemEmpoweringCategory;
 import net.christopher.mccourse.recipe.GemEmpoweringRecipe;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class GemEmpoweringDisplay extends BasicDisplay {
     }
 
     public GemEmpoweringDisplay(GemEmpoweringRecipe recipe) {
-        super(getInputList(recipe), List.of(EntryIngredient.of(EntryStacks.of(recipe.getResult(null)))));
+        super(getInputList(recipe), List.of(EntryIngredient.of(EntryStacks.of(recipe.getOutput(null)))));
     }
 
     private static List<EntryIngredient> getInputList(GemEmpoweringRecipe recipe) {

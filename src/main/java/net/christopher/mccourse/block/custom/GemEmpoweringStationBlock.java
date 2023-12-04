@@ -6,7 +6,6 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -54,7 +53,6 @@ public class GemEmpoweringStationBlock extends BlockWithEntity implements BlockE
         return new GemEmpoweringStationBlockEntity(pos, state);
     }
 
-
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
@@ -65,10 +63,10 @@ public class GemEmpoweringStationBlock extends BlockWithEntity implements BlockE
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof GemEmpoweringStationBlockEntity) {
-                ItemScatterer.spawn(world, pos, (GemEmpoweringStationBlockEntity) blockEntity);
+                ItemScatterer.spawn(world, pos, (GemEmpoweringStationBlockEntity)blockEntity);
+                world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
-
         }
     }
 
@@ -88,19 +86,6 @@ public class GemEmpoweringStationBlock extends BlockWithEntity implements BlockE
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, ModBlockEntities.GEM_EMPOWERING_STATION_BE, (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos,state1));
+        return checkType(type, ModBlockEntities.GEM_EMPOWERING_STATION_BE, (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

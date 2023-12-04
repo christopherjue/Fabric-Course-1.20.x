@@ -70,12 +70,12 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_warped_planks",
       "has_diamond_block",
       "has_netherite_ingot",
       "has_string",
-      "has_pink_garnet"
+      "has_pink_garnet",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

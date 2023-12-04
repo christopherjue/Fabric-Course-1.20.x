@@ -70,12 +70,12 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_stick",
       "has_pink_garnet_pickaxe",
       "has_pink_garnet_axe",
       "has_pink_garnet_shovel",
-      "has_pink_garnet_sword"
+      "has_pink_garnet_sword",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

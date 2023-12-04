@@ -1,8 +1,12 @@
 package net.christopher.mccourse;
 
+import net.christopher.mccourse.block.entity.ModBlockEntities;
+import net.christopher.mccourse.block.entity.renderer.GemEmpoweringBlockEntityRenderer;
 import net.christopher.mccourse.mixin.ModelLoaderMixin;
+import net.christopher.mccourse.networking.ModMessages;
 import net.christopher.mccourse.screen.GemEmpoweringScreen;
 import net.christopher.mccourse.screen.ModScreenHandlers;
+import net.christopher.mccourse.util.ModWoodTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry;
@@ -16,6 +20,11 @@ import net.christopher.mccourse.particle.PinkGarnetParticle;
 import net.christopher.mccourse.util.ModModelPredicateProvider;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.TexturedRenderLayers;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
+import net.minecraft.client.render.block.entity.HangingSignBlockEntityRenderer;
+import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
 import net.minecraft.client.util.ModelIdentifier;
 
 public class MCCourseModClient implements ClientModInitializer {
@@ -27,6 +36,7 @@ public class MCCourseModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CAULIFLOWER_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PETUNIA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PETUNIA, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DRIFTWOOD_SAPLING, RenderLayer.getCutout());
 
         ModModelPredicateProvider.registerModModels();
 
@@ -38,8 +48,19 @@ public class MCCourseModClient implements ClientModInitializer {
                 ModFluids.STILL_SOAP_WATER, ModFluids.FLOWING_SOAP_WATER);
 
 
+
+
         ModelLoadingRegistry.INSTANCE.registerModelProvider((manager, out) -> new ModelIdentifier(MCCourseMod.MOD_ID, "radiation_staff_3d", "inventory"));
 
         HandledScreens.register(ModScreenHandlers.GEM_EMPOWERING_SCREEN_HANDLER, GemEmpoweringScreen::new);
+
+
+        ModMessages.registerS2CPackets();
+        TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(ModWoodTypes.DRIFTWOOD, TexturedRenderLayers.getSignTextureId(ModWoodTypes.DRIFTWOOD));
+
+
+        BlockEntityRendererFactories.register(ModBlockEntities.GEM_EMPOWERING_STATION_BE, GemEmpoweringBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.MOD_SIGN_BLOCK_ENTITY, SignBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.MOD_HANGING_SIGN_BLOCK_ENTITY, HangingSignBlockEntityRenderer::new);
     }
 }

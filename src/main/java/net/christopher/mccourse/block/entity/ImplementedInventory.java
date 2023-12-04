@@ -23,7 +23,7 @@ import java.util.List;
  * @author Juuz
  */
 @FunctionalInterface
-public interface ImplmentedInventory extends SidedInventory {
+public interface ImplementedInventory extends SidedInventory {
     /**
      * Gets the item list of this inventory.
      * Must return the same instance every time it's called.
@@ -38,7 +38,7 @@ public interface ImplmentedInventory extends SidedInventory {
      * @param items the item list
      * @return a new inventory
      */
-    static ImplmentedInventory of(DefaultedList<ItemStack> items) {
+    static ImplementedInventory of(DefaultedList<ItemStack> items) {
         return () -> items;
     }
 
@@ -48,7 +48,7 @@ public interface ImplmentedInventory extends SidedInventory {
      * @param size the inventory size
      * @return a new inventory
      */
-    static ImplmentedInventory ofSize(int size) {
+    static ImplementedInventory ofSize(int size) {
         return of(DefaultedList.ofSize(size, ItemStack.EMPTY));
     }
 

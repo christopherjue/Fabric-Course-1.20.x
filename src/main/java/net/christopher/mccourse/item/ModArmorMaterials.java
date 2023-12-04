@@ -1,5 +1,5 @@
 package net.christopher.mccourse.item;
-import net.christopher.mccourse.MCCourseMod;
+
 import net.christopher.mccourse.MCCourseMod;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
@@ -17,13 +17,13 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     PINK_GARNET("pink_garnet", 25, Util.make(new EnumMap(ArmorItem.Type.class), map -> {
-        map.put(ArmorItem.Type.BOOTS, 5);
-        map.put(ArmorItem.Type.LEGGINGS, 8);
-        map.put(ArmorItem.Type.CHESTPLATE, 15);
-        map.put(ArmorItem.Type.HELMET, 7);
-    }), 35, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0f, 2.0f, () -> Ingredient.ofItems(ModItems.PINK_GARNET));
+        map.put(ArmorItem.Type.BOOTS, 3);
+        map.put(ArmorItem.Type.LEGGINGS, 6);
+        map.put(ArmorItem.Type.CHESTPLATE, 8);
+        map.put(ArmorItem.Type.HELMET, 3);
+    }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.0f, 0.0f, () -> Ingredient.ofItems(ModItems.PINK_GARNET));
 
-    public static final StringIdentifiable.EnumCodec<ArmorMaterials> CODEC;
+    public static final StringIdentifiable.Codec<ArmorMaterials> CODEC;
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY;
     private final String name;
     private final int durabilityMultiplier;
@@ -89,10 +89,10 @@ public enum ModArmorMaterials implements ArmorMaterial {
     static {
         CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
         BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), map -> {
-            map.put(ArmorItem.Type.BOOTS, 5000);
-            map.put(ArmorItem.Type.LEGGINGS, 5000);
-            map.put(ArmorItem.Type.CHESTPLATE, 5000);
-            map.put(ArmorItem.Type.HELMET, 5000);
+            map.put(ArmorItem.Type.BOOTS, 13);
+            map.put(ArmorItem.Type.LEGGINGS, 15);
+            map.put(ArmorItem.Type.CHESTPLATE, 16);
+            map.put(ArmorItem.Type.HELMET, 11);
         });
     }
 }

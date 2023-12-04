@@ -19,7 +19,7 @@ public class ModArmorItem extends ArmorItem {
                     .put(ModArmorMaterials.PINK_GARNET, new StatusEffectInstance(StatusEffects.STRENGTH, 800, 1))
                     //.put(ModArmorMaterials.PINK_GARNET, new StatusEffects(StatusEffects.WATER_BREATHING, 9000, 1))
                     //I wanted to add 2 effects or more you can't do this
-                    .build();
+
 
 
 //                            ( ),
@@ -30,6 +30,7 @@ public class ModArmorItem extends ArmorItem {
 //                            ( new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 9000, 1)),
 //                            ( new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 9000, 1)),
 //                            ( new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 9000, 1))
+                    .build();
 
 
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {

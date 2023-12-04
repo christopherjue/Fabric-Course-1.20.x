@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "H": {
-      "item": "mccourse:pink_garnet"
+    "G": {
+      "item": "minecraft:glass"
     },
     "I": {
       "item": "minecraft:calcite"
@@ -15,7 +15,7 @@
   "pattern": [
     "VIV",
     "III",
-    "IHI"
+    "IGI"
   ],
   "result": {
     "item": "mccourse:gem_empowering_station"

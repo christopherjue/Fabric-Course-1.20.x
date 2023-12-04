@@ -33,9 +33,9 @@ public class ModItems {
             new ShovelItem(ModToolMaterial.PINK_GARNET, 4.25f, -1f,new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_AXE = registerItem("pink_garnet_axe",
-            new ModWeaknessAxeItem(ModToolMaterial.PINK_GARNET, 6, -3.5f,new FabricItemSettings()));
+            new ModWeaknessAxeItem(ModToolMaterial.PINK_GARNET, 6, -3.0f,new FabricItemSettings()));
 
-    public static final  Item  PINK_GARNET_HOE= registerItem("pink_garnet_hoe",
+    public static final  Item  PINK_GARNET_SCYTHE= registerItem("pink_garnet_scythe",
             new ModSlownessHoeItem(ModToolMaterial.PINK_GARNET, 10, -2.98f, new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_PICKAXE= registerItem("pink_garnet_pickaxe",
@@ -54,10 +54,18 @@ public class ModItems {
             new ModArmorItem((ModArmorMaterials.PINK_GARNET), ArmorItem.Type.LEGGINGS ,new FabricItemSettings()));
 
     public static final  Item  PINK_GARNET_BOOTS =  registerItem("pink_garnet_boots",
-            new ModArmorItem((ModArmorMaterials.PINK_GARNET), ArmorItem.Type.BOOTS ,new FabricItemSettings()));
+            new ModArmorItem((ModArmorMaterials.PINK_GARNET), ArmorItem.Type.BOOTS ,new FabricItemSettings().maxCount(23)));
 
     public static final Item PINK_GARNET_HORSE_ARMOR = registerItem("pink_garnet_horse_armor",
             new HorseArmorItem(14, "pink_garnet", new FabricItemSettings()));
+
+    public static final Item DRIFTWOOD_SIGN = registerItem("driftwood_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.DRIFTWOOD_SIGN, ModBlocks.DRIFTWOOD_WALL_SIGN));
+    public static final Item DRIFTWOOD_HANGING_SIGN = registerItem("driftwood_hanging_sign",
+            new HangingSignItem(ModBlocks.DRIFTWOOD_HANGING_SIGN, ModBlocks.DRIFTWOOD_HANGING_WALL_SIGN, new FabricItemSettings().maxCount(16)));
+
+
+
 
 
     public static final  Item BEST_FOOD_IN_MINECRAFT = registerItem("best_food_in_minecraft",

@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -25,24 +24,20 @@ public class SoundBlock extends Block {
         super(settings);
     }
 
-
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (player.isSneaking()) {
+        if(player.isSneaking()) {
             world.playSound(player, pos, SoundEvents.BLOCK_NOTE_BLOCK_BANJO.value(), SoundCategory.BLOCKS, 1f, 1f);
             return ActionResult.SUCCESS;
         } else {
             world.playSound(player, pos, SoundEvents.BLOCK_NOTE_BLOCK_COW_BELL.value(), SoundCategory.BLOCKS, 1f, 1f);
             return ActionResult.CONSUME;
         }
-
-
-        }
+    }
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-
         world.playSound(entity, pos, SoundEvents.BLOCK_NOTE_BLOCK_BIT.value(), SoundCategory.BLOCKS, 1f, 1f);
         super.onSteppedOn(world, pos, state, entity);
     }
@@ -52,4 +47,3 @@ public class SoundBlock extends Block {
         tooltip.add(Text.translatable("tooltip.mccourse.sound_block"));
     }
 }
-

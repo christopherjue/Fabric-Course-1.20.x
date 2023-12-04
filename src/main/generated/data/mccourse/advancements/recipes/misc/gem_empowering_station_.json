@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_pink_garnet": {
+    "has_glass": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mccourse:pink_garnet"
+              "minecraft:glass"
             ]
           }
         ]
@@ -46,10 +46,10 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_calcite",
       "has_polished_blackstone",
-      "has_pink_garnet"
+      "has_glass",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

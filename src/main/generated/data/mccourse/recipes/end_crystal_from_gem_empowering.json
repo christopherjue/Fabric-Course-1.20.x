@@ -1,0 +1,11 @@
+{
+  "type": "mccourse:gem_empowering",
+  "ingredients": [
+    {
+      "item": "minecraft:ghast_tear"
+    }
+  ],
+  "output": {
+    "item": "minecraft:end_crystal"
+  }
+}

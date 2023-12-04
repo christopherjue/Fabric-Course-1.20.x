@@ -46,10 +46,10 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_stick",
       "has_pink_garnet",
-      "has_pink_garnet_paxel"
+      "has_pink_garnet_paxel",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

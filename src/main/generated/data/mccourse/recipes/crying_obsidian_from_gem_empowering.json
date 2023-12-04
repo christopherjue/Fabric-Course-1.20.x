@@ -1,0 +1,12 @@
+{
+  "type": "mccourse:gem_empowering",
+  "ingredients": [
+    {
+      "item": "minecraft:obsidian"
+    }
+  ],
+  "output": {
+    "count": 4,
+    "item": "minecraft:crying_obsidian"
+  }
+}

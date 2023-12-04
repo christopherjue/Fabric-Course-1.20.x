@@ -1,0 +1,12 @@
+{
+  "type": "mccourse:gem_empowering",
+  "ingredients": [
+    {
+      "item": "minecraft:gunpowder"
+    }
+  ],
+  "output": {
+    "count": 10,
+    "item": "minecraft:tnt"
+  }
+}

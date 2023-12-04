@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mccourse:item/creative_mode_sword"
+    "layer0": "mccourse:item/soap_water_bucket"
   }
 }
