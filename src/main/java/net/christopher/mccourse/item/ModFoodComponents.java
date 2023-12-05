@@ -44,9 +44,7 @@ public class ModFoodComponents {
 
             .alwaysEdible().build();
 
-    public static final FoodComponent CAULIFLOWER = new FoodComponent.Builder().hunger(10).saturationModifier(1.5f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 500, 5), 1.0f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 900, 0), 1.0f)
+    public static final FoodComponent CAULIFLOWER = new FoodComponent.Builder().hunger(2).saturationModifier(1.0f)
 
 
 

@@ -1,5 +1,6 @@
 package net.christopher.mccourse;
 
+import net.christopher.mccourse.entity.ModEntities;
 import net.christopher.mccourse.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -53,5 +54,7 @@ public class MCCourseMod implements ModInitializer {
 
 		ModRecipes.registerRecipes();
 		ModWorldGeneration.generateModWorldGeneration();
+
+		ModEntities.registerModEntities();
 	}
 }

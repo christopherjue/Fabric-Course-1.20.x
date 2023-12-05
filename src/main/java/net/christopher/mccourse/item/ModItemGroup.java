@@ -25,6 +25,7 @@ public class ModItemGroup {
                         entries.add(ModItems.CREATIVE_MODE_SWORD);
                         entries.add(ModItems.BAR_BRAWL_MUSIC_DISC);
                         entries.add(ModBlocks.GEM_EMPOWERING_STATION);
+                        entries.add(ModItems.PORCUPINE_SPAWN_EGG);
 
 
 

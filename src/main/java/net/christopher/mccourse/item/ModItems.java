@@ -2,6 +2,7 @@ package net.christopher.mccourse.item;
 
 import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.block.ModBlocks;
+import net.christopher.mccourse.entity.ModEntities;
 import net.christopher.mccourse.item.custom.*;
 import net.christopher.mccourse.sound.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -85,6 +86,9 @@ public class ModItems {
 
     public static final Item PINK_GARNET_SHIELD = registerItem("pink_garnet_shield",
             new ShieldItem(new FabricItemSettings().maxDamage(5000)));
+
+    public static final Item PORCUPINE_SPAWN_EGG = registerItem("porcupine_spawn_egg",
+            new SpawnEggItem(ModEntities.PORCUPINE, 0xa86518, 0x3b26f, new FabricItemSettings()));
 
 
 

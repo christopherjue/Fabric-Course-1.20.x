@@ -3,6 +3,8 @@ package net.christopher.mccourse.util;
 import net.christopher.mccourse.block.ModBlocks;
 import net.christopher.mccourse.command.ReturnHomeCommand;
 import net.christopher.mccourse.command.SetHomeCommand;
+import net.christopher.mccourse.entity.ModEntities;
+import net.christopher.mccourse.entity.custom.PorcupineEntity;
 import net.christopher.mccourse.event.AttackEntityHandler;
 import net.christopher.mccourse.event.PlayerCopyHandler;
 import net.christopher.mccourse.item.ModItems;
@@ -12,6 +14,7 @@ import net.christopher.mccourse.villager.ModVillagers;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -33,6 +36,8 @@ public class ModRegistries {
         registerCustomTrades();
         registerStrippables();
         registerFlammables();
+        registerAttributes();
+
 
     }
 
@@ -42,6 +47,10 @@ public class ModRegistries {
 
         registry.add(ModItems.PEAT_BRICK, 9000000);
 
+    }
+
+    private static void registerAttributes() {
+        FabricDefaultAttributeRegistry.register(ModEntities.PORCUPINE, PorcupineEntity.createPorcupineAttributes());
     }
 
 

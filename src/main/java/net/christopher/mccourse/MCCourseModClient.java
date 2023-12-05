@@ -2,6 +2,10 @@ package net.christopher.mccourse;
 
 import net.christopher.mccourse.block.entity.ModBlockEntities;
 import net.christopher.mccourse.block.entity.renderer.GemEmpoweringBlockEntityRenderer;
+import net.christopher.mccourse.entity.ModEntities;
+import net.christopher.mccourse.entity.client.PorcupineModel;
+import net.christopher.mccourse.entity.client.PorcupineRenderer;
+import net.christopher.mccourse.entity.layer.ModModelLayers;
 import net.christopher.mccourse.mixin.ModelLoaderMixin;
 import net.christopher.mccourse.networking.ModMessages;
 import net.christopher.mccourse.screen.GemEmpoweringScreen;
@@ -18,6 +22,8 @@ import net.christopher.mccourse.fluid.ModFluids;
 import net.christopher.mccourse.particle.ModParticles;
 import net.christopher.mccourse.particle.PinkGarnetParticle;
 import net.christopher.mccourse.util.ModModelPredicateProvider;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
@@ -61,6 +67,17 @@ public class MCCourseModClient implements ClientModInitializer {
 
         BlockEntityRendererFactories.register(ModBlockEntities.GEM_EMPOWERING_STATION_BE, GemEmpoweringBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.MOD_SIGN_BLOCK_ENTITY, SignBlockEntityRenderer::new);
+
+
         BlockEntityRendererFactories.register(ModBlockEntities.MOD_HANGING_SIGN_BLOCK_ENTITY, HangingSignBlockEntityRenderer::new);
+
+
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.PORCUPINE, PorcupineModel::getTexturedModelData);
+
+
+        EntityRendererRegistry.register(ModEntities.PORCUPINE, PorcupineRenderer::new);
+
+
+
     }
 }
