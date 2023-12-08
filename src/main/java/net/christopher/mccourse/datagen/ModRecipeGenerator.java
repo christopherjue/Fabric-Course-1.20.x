@@ -282,16 +282,6 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
 
 
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.PINK_GARNET, RecipeCategory.MISC, ModBlocks.PINK_GARNET_BLOCK);
-        offerSmelting(exporter, List.of(ModItems.RAW_PINK_GARNET, ModBlocks.PINK_GARNET_ORE, ModBlocks.DEEPSLATE_PINK_GARNET_ORE,
-                ModBlocks.NETHER_PINK_GARNET_ORE, ModBlocks.END_STONE_PINK_GARNET_ORE), RecipeCategory.MISC, ModItems.PINK_GARNET,
-                0.25f, 10, "pink_garnet");
-        //offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.PINK_GARNET, RecipeCategory.MISC, ModBlocks.PINK_GARNET_BLOCK);
-        offerBlasting(exporter, List.of(ModItems.RAW_PINK_GARNET, ModBlocks.PINK_GARNET_ORE, ModBlocks.DEEPSLATE_PINK_GARNET_ORE,
-                        ModBlocks.NETHER_PINK_GARNET_ORE, ModBlocks.END_STONE_PINK_GARNET_ORE), RecipeCategory.MISC, ModItems.PINK_GARNET,
-                0.25f, 10, "pink_garnet");
-
-
         new GemEmpoweringRecipeBuilder(ModItems.RAW_PINK_GARNET, ModItems.PINK_GARNET, 6)
                 .criterion(hasItem(ModItems.RAW_PINK_GARNET), conditionsFromItem(ModItems.RAW_PINK_GARNET))
                 .offerTo(exporter);
@@ -322,6 +312,10 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
         new GemEmpoweringRecipeBuilder(Items.TNT, Items.TNT_MINECART, 10)
                 .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
+                .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.NETHERRACK, Items.GHAST_TEAR, 4)
+                .criterion(hasItem(Items.NETHERRACK), conditionsFromItem(Items.NETHERRACK))
                 .offerTo(exporter);
 
 

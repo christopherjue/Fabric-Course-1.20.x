@@ -3,6 +3,8 @@ package net.christopher.mccourse;
 import net.christopher.mccourse.block.entity.ModBlockEntities;
 import net.christopher.mccourse.block.entity.renderer.GemEmpoweringBlockEntityRenderer;
 import net.christopher.mccourse.entity.ModEntities;
+import net.christopher.mccourse.entity.client.MagicProjectileModel;
+import net.christopher.mccourse.entity.client.MagicProjectileRenderer;
 import net.christopher.mccourse.entity.client.PorcupineModel;
 import net.christopher.mccourse.entity.client.PorcupineRenderer;
 import net.christopher.mccourse.entity.layer.ModModelLayers;
@@ -31,6 +33,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.block.entity.HangingSignBlockEntityRenderer;
 import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.client.util.ModelIdentifier;
 
 public class MCCourseModClient implements ClientModInitializer {
@@ -73,9 +76,13 @@ public class MCCourseModClient implements ClientModInitializer {
 
 
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.PORCUPINE, PorcupineModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MAGIC_PROJECTILE, MagicProjectileModel::getTexturedModelData);
 
 
         EntityRendererRegistry.register(ModEntities.PORCUPINE, PorcupineRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.THROWN_DICE_PROJECTILE, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.MAGIC_PROJECTILE, MagicProjectileRenderer::new);
 
 
 

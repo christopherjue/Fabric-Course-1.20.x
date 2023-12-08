@@ -9,6 +9,8 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.boss.BossBar;
+import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -24,9 +26,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Arm;
 import net.minecraft.util.Hand;
@@ -56,8 +61,12 @@ public class PorcupineEntity extends TameableEntity implements Mount {
 
     public final AnimationState sitAnimationState = new AnimationState();
 
+    //private final ServerBossBar bossBar = new ServerBossBar(Text.literal("Porcupine Of DEATH"),
+    //        BossBar.Color.RED, BossBar.Style.NOTCHED_10);
+
     public PorcupineEntity(EntityType<? extends TameableEntity> entityType, World world) {
         super(entityType, world);
+
     }
 
     @Override
@@ -67,12 +76,15 @@ public class PorcupineEntity extends TameableEntity implements Mount {
         this.goalSelector.add(0, new SitGoal(this));
         this.goalSelector.add(1, new PorcupineAttackGoal(this, 1.1D, true));
 
-        this.goalSelector.add(2, new FollowOwnerGoal(this, 1.1D, 10f, 3f, false));
-        this.goalSelector.add(2, new FollowParentGoal(this, 1.1D));
+        this.goalSelector.add(2, new AnimalMateGoal(this, 1.15D));
+        this.goalSelector.add(3, new TemptGoal(this, 1.1D, Ingredient.ofItems(Items.COOKED_BEEF), false));
 
-        this.goalSelector.add(3, new WanderAroundFarGoal(this, 1.0D));
-        this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 4.0F));
-        this.goalSelector.add(5, new LookAroundGoal(this));
+        this.goalSelector.add(4, new FollowOwnerGoal(this, 1.1D, 10f, 3f, false));
+        this.goalSelector.add(4, new FollowParentGoal(this, 1.1D));
+
+        this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0D));
+        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 4.0F));
+        this.goalSelector.add(7, new LookAroundGoal(this));
 
         this.targetSelector.add(1, new RevengeGoal(this));
     }
@@ -238,7 +250,7 @@ public class PorcupineEntity extends TameableEntity implements Mount {
             }
         }
 
-        if(isTamed() && hand == Hand.MAIN_HAND && item != itemForTaming) {
+        if(isTamed() && hand == Hand.MAIN_HAND && item != itemForTaming && !isBreedingItem(itemstack)) {
             if(!player.isSneaking()) {
                 setRiding(player);
             } else {
@@ -327,5 +339,32 @@ public class PorcupineEntity extends TameableEntity implements Mount {
             }
         }
         return super.updatePassengerForDismount(passenger);
+    }
+
+
+    @Override
+    public boolean isBreedingItem(ItemStack stack) {
+        return stack.isOf(Items.COOKED_BEEF);
+    }
+/* boss bar not using right now uncomment if you want a bossbar */
+
+    @Override
+    public void onStartedTrackingBy(ServerPlayerEntity player) {
+        super.onStartedTrackingBy(player);
+        //this.bossBar.addPlayer(player);
+    }
+
+    @Override
+    public void onStoppedTrackingBy(ServerPlayerEntity player) {
+        super.onStoppedTrackingBy(player);
+
+        //this.bossBar.removePlayer(player);
+    }
+
+
+    @Override
+    protected void mobTick() {
+        super.mobTick();
+        //this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
     }
 }

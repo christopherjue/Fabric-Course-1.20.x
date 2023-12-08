@@ -79,7 +79,7 @@ public class ModItems {
             new MusicDiscItem(9, ModSounds.BAR_BRAWL, new FabricItemSettings().maxCount(1), 122));
 
     public static final Item RADIATION_STAFF = registerItem("radiation_staff",
-            new Item(new FabricItemSettings()));
+            new RadiationStaffItem(new FabricItemSettings().maxDamage(1024)));
 
     public static final Item PINK_GARNET_BOW = registerItem("pink_garnet_bow",
             new BowItem(new FabricItemSettings().maxDamage(5515)));
@@ -102,6 +102,11 @@ public class ModItems {
 
     public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
             new AliasedBlockItem(ModBlocks.CAULIFLOWER_CROP , new  FabricItemSettings()));
+
+    public static final Item DICE = registerItem("dice",
+            new DiceItem(new  FabricItemSettings()));
+
+
 
 
 

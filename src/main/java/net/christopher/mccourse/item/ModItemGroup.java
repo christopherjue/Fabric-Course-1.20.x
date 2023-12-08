@@ -28,6 +28,9 @@ public class ModItemGroup {
                         entries.add(ModItems.PORCUPINE_SPAWN_EGG);
 
 
+                        entries.add(ModItems.DICE);
+
+
 
 
 

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_pink_garnet": {
+    "has_netherrack": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mccourse:raw_pink_garnet"
+              "minecraft:netherrack"
             ]
           }
         ]
@@ -15,21 +15,23 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pink_garnet_from_smelting_raw_pink_garnet"
+        "recipe": "minecraft:ghast_tear"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_raw_pink_garnet",
+      "has_netherrack"
+    ],
+    [
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pink_garnet_from_smelting_raw_pink_garnet"
+      "minecraft:ghast_tear"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

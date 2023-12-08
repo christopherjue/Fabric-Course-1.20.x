@@ -96,6 +96,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PINK_GARNET_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.BAR_BRAWL_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModFluids.SOAP_WATER_BUCKET, Models.GENERATED);
+
+
+        itemModelGenerator.register(ModItems.DICE, Models.GENERATED);
         // itemModelGenerator.register(ModItems.DATA_TABLET, Models.GENERATED);
 
 

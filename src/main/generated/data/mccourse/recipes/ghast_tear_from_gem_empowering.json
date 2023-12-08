@@ -1,0 +1,12 @@
+{
+  "type": "mccourse:gem_empowering",
+  "ingredients": [
+    {
+      "item": "minecraft:netherrack"
+    }
+  ],
+  "output": {
+    "count": 4,
+    "item": "minecraft:ghast_tear"
+  }
+}
