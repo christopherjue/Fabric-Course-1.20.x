@@ -1,7 +1,10 @@
 package net.christopher.mccourse;
 
+import net.christopher.mccourse.entity.ModBoats;
 import net.christopher.mccourse.entity.ModEntities;
 import net.christopher.mccourse.world.gen.ModWorldGeneration;
+import net.christopher.mccourse.world.tree.ModFoliagePlacerTypes;
+import net.christopher.mccourse.world.tree.custom.ModTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
 
 import net.christopher.mccourse.block.ModBlocks;
@@ -56,5 +59,10 @@ public class MCCourseMod implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModEntities.registerModEntities();
+
+		ModTrunkPlacerTypes.register();
+
+		ModFoliagePlacerTypes.register();
+		ModBoats.registerBoats();
 	}
 }

@@ -1,15 +1,16 @@
 package net.christopher.mccourse.block;
 
-import net.christopher.mccourse.block.custom.*;
-import net.christopher.mccourse.item.ModItems;
-import net.christopher.mccourse.util.ModWoodTypes;
-import net.christopher.mccourse.world.tree.DriftwoodSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.christopher.mccourse.MCCourseMod;
+import net.christopher.mccourse.block.custom.*;
 import net.christopher.mccourse.sound.ModSounds;
+import net.christopher.mccourse.util.ModWoodTypes;
+import net.christopher.mccourse.world.tree.DriftwoodSaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
+import net.minecraft.data.family.BlockFamilies;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -102,14 +103,17 @@ public class ModBlocks {
     public static final Block DRIFTWOOD_HANGING_WALL_SIGN = registerBlockWithoutBlockItem("driftwood_hanging_wall_sign",
             new ModWallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_WALL_HANGING_SIGN), ModWoodTypes.DRIFTWOOD));
 
-
     public static final Block DICE_BLOCK = registerBlockWithoutBlockItem("dice_block",
             new DiceBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+
+
+    public static final Block CATTAIL_CROP = registerBlockWithoutBlockItem("cattail_crop",
+            new CattailCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(MCCourseMod.MOD_ID, name), block);
     }
-
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

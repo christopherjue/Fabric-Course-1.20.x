@@ -25,10 +25,19 @@
 
   "item.mccourse.dice": "Dice",
 
+
+  "item.mccourse.driftwood_boat": "Driftwood Boat",
+  "item.mccourse.driftwood_chest_boat": "Driftwood Chest Boat",
+
   "item.mccourse.bar_brawl_music_disc": "Bar Brawl Music Disc",
   "item.mccourse.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
 
   "item.mccourse.porcupine_spawn_egg": "Porcupine Spawn Egg",
+
+
+
+  "item.mccourse.cattail": "Cattail",
+  "item.mccourse.cattail_seeds": "Cattail Seeds",
 
   "item.mccourse.radiation_staff": "Radiation Staff",
   "item.mccourse.pink_garnet_bow": "Pink Garnet Bow",

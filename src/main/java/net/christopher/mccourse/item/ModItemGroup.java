@@ -31,6 +31,10 @@ public class ModItemGroup {
                         entries.add(ModItems.DICE);
 
 
+                        entries.add(ModItems.CATTAIL);
+                        entries.add(ModItems.CATTAIL_SEEDS);
+
+
 
 
 
@@ -41,6 +45,10 @@ public class ModItemGroup {
                         entries.add(ModItems.PINK_GARNET_SCYTHE);
                         entries.add(ModItems.PINK_GARNET_PAXEL);
                         entries.add(ModItems.PINK_GARNET_HORSE_ARMOR);
+
+
+                        entries.add(ModItems.DRIFTWOOD_CHEST_BOAT);
+                        entries.add(ModItems.DRIFTWOOD_BOAT);
 
                         entries.add(ModItems.RADIATION_STAFF);
                         entries.add(ModItems.PINK_GARNET_BOW);

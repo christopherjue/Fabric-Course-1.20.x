@@ -302,16 +302,12 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(Items.OBSIDIAN), conditionsFromItem(Items.OBSIDIAN))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.GHAST_TEAR, Items.END_CRYSTAL, 1)
+        new GemEmpoweringRecipeBuilder(Items.GHAST_TEAR, Items.END_CRYSTAL, 5)
                 .criterion(hasItem(Items.GHAST_TEAR), conditionsFromItem(Items.GHAST_TEAR))
                 .offerTo(exporter);
 
         new GemEmpoweringRecipeBuilder(Items.GUNPOWDER, Items.TNT, 10)
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
-                .offerTo(exporter);
-
-        new GemEmpoweringRecipeBuilder(Items.TNT, Items.TNT_MINECART, 10)
-                .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
                 .offerTo(exporter);
 
         new GemEmpoweringRecipeBuilder(Items.NETHERRACK, Items.GHAST_TEAR, 4)

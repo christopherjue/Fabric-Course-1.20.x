@@ -1,6 +1,7 @@
 package net.christopher.mccourse.datagen;
 
 import net.christopher.mccourse.MCCourseMod;
+import net.christopher.mccourse.block.ModBlocks;
 import net.christopher.mccourse.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
@@ -39,5 +40,15 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("has_used_metal_detector", InventoryChangedCriterion.Conditions.items(ModItems.METAL_DETECTOR))
                 .parent(rootAdvancement)
                 .build(consumer, MCCourseMod.MOD_ID + ":metal_detector");
+
+
+        Advancement cover_me_in_pink_garnet = Advancement.Builder.create()
+                .display(new AdvancementDisplay(new ItemStack(ModBlocks.PINK_GARNET_BLOCK),
+                        Text.literal("Cover Me In Pink Garnet"), Text.literal("The New Modded Armor Set!"),
+                        new Identifier(MCCourseMod.MOD_ID, "item/pink_garnet_chestplate"), AdvancementFrame.TASK,
+                        true, true, false))
+                .criterion("has_pink_garnet", InventoryChangedCriterion.Conditions.items(ModItems.PINK_GARNET_CHESTPLATE))
+                .parent(rootAdvancement)
+                .build(consumer, MCCourseMod.MOD_ID + ":cover_me_in_pink_garnet");
     }
 }

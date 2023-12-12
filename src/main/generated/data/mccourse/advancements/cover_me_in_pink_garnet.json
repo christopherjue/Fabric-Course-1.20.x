@@ -1,0 +1,39 @@
+{
+  "parent": "mccourse:mccourse",
+  "criteria": {
+    "has_pink_garnet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mccourse:pink_garnet_chestplate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "mccourse:item/pink_garnet_chestplate",
+    "description": {
+      "text": "The New Modded Armor Set!"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mccourse:pink_garnet_block"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Cover Me In Pink Garnet"
+    }
+  },
+  "requirements": [
+    [
+      "has_pink_garnet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

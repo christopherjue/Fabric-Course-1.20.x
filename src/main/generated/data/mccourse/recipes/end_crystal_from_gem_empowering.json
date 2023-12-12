@@ -6,6 +6,7 @@
     }
   ],
   "output": {
+    "count": 5,
     "item": "minecraft:end_crystal"
   }
 }

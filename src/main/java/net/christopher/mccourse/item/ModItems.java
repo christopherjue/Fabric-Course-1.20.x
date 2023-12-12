@@ -1,7 +1,9 @@
 package net.christopher.mccourse.item;
 
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.block.ModBlocks;
+import net.christopher.mccourse.entity.ModBoats;
 import net.christopher.mccourse.entity.ModEntities;
 import net.christopher.mccourse.item.custom.*;
 import net.christopher.mccourse.sound.ModSounds;
@@ -105,6 +107,21 @@ public class ModItems {
 
     public static final Item DICE = registerItem("dice",
             new DiceItem(new  FabricItemSettings()));
+
+
+    public static final Item CATTAIL_SEEDS = registerItem("cattail_seeds",
+            new AliasedBlockItem(ModBlocks.CATTAIL_CROP, new FabricItemSettings()));
+
+    public static final Item CATTAIL = registerItem("cattail",
+            new Item(new FabricItemSettings()));
+
+
+    public static final Item DRIFTWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.DRIFTWOOD_BOAT_ID, ModBoats.DRIFTWOOD_BOAT_KEY, false);
+    public static final Item DRIFTWOOD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.DRIFTWOOD_CHEST_BOAT_ID, ModBoats.DRIFTWOOD_BOAT_KEY, true);
+
+
+
+
 
 
 
