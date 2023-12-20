@@ -2,20 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "mccourse:pink_garnet"
-    },
     "V": {
-      "item": "minecraft:stick"
+      "item": "mccourse:pink_garnet"
     }
   },
   "pattern": [
     "VVV",
-    "VIV",
-    " I "
+    "VVV",
+    "VVV"
   ],
   "result": {
-    "item": "mccourse:metal_detector"
+    "item": "mccourse:pink_garnet_block"
   },
   "show_notification": true
 }

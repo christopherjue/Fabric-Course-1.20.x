@@ -36,6 +36,7 @@
 
 
 
+
   "item.mccourse.cattail": "Cattail",
   "item.mccourse.cattail_seeds": "Cattail Seeds",
 
@@ -72,6 +73,8 @@
   "block.mccourse.pink_garnet_lamp_block": "Pink Garnet Lamp Block",
   "block.mccourse.petunia": "Petunia",
   "block.mccourse.gem_empowering_station": "Gem Empowering Station",
+
+  "block.mccourse.colored_leaves": "Colored Leaves",
 
 
   "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",

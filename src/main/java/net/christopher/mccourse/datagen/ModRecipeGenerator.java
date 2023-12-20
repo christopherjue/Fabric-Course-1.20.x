@@ -46,6 +46,69 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.METAL_DETECTOR) + "_"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PINK_GARNET_BLOCK)
+                .pattern("VVV")
+                .pattern("VVV")
+                .pattern("VVV")
+                .input('V', ModItems.PINK_GARNET)
+                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PINK_GARNET_BLOCK) + "_"));
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PINK_GARNET_STAIRS)
+                .pattern("V  ")
+                .pattern("VV ")
+                .pattern("VVV")
+                .input('V', ModItems.PINK_GARNET)
+                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PINK_GARNET_STAIRS) + "_"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DRIFTWOOD_WOOD)
+                .pattern("   ")
+                .pattern(" VV")
+                .pattern(" VV")
+                .input('V', ModBlocks.DRIFTWOOD_LOG)
+                .criterion(hasItem(ModBlocks.DRIFTWOOD_LOG), conditionsFromItem(ModBlocks.DRIFTWOOD_LOG))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DRIFTWOOD_WOOD) + "_"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DRIFTWOOD_PLANKS)
+                .pattern("   ")
+                .pattern(" V ")
+                .pattern("   ")
+                .input('V', ModBlocks.DRIFTWOOD_LOG)
+                .criterion(hasItem(ModBlocks.DRIFTWOOD_LOG), conditionsFromItem(ModBlocks.DRIFTWOOD_LOG))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DRIFTWOOD_PLANKS) + "_"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DRIFTWOOD_SIGN)
+                .pattern("VVV")
+                .pattern("VVV")
+                .pattern(" I ")
+                .input('V', ModBlocks.DRIFTWOOD_PLANKS)
+                .input('I', Items.STICK)
+                .criterion(hasItem(ModBlocks.DRIFTWOOD_PLANKS), conditionsFromItem(ModBlocks.DRIFTWOOD_PLANKS))
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DRIFTWOOD_SIGN) + "_"));
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DRIFTWOOD_HANGING_SIGN)
+                .pattern("I I")
+                .pattern("VVV")
+                .pattern("VVV")
+                .input('V', ModBlocks.DRIFTWOOD_LOG)
+                .input('I', Items.CHAIN)
+                .criterion(hasItem(ModBlocks.DRIFTWOOD_LOG), conditionsFromItem(ModBlocks.DRIFTWOOD_LOG))
+                .criterion(hasItem(Items.CHAIN), conditionsFromItem(Items.CHAIN))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DRIFTWOOD_HANGING_SIGN) + "_"));
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PINK_GARNET)
+                .pattern("   ")
+                .pattern(" V ")
+                .pattern("   ")
+                .input('V', ModBlocks.PINK_GARNET_BLOCK)
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.PINK_GARNET) + "_"));
+
 
 
 

@@ -111,9 +111,9 @@ public class ModItems {
 
     public static final Item CATTAIL_SEEDS = registerItem("cattail_seeds",
             new AliasedBlockItem(ModBlocks.CATTAIL_CROP, new FabricItemSettings()));
-
     public static final Item CATTAIL = registerItem("cattail",
             new Item(new FabricItemSettings()));
+
 
 
     public static final Item DRIFTWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.DRIFTWOOD_BOAT_ID, ModBoats.DRIFTWOOD_BOAT_KEY, false);

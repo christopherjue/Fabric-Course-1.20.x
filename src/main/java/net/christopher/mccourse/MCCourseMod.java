@@ -1,9 +1,6 @@
 package net.christopher.mccourse;
 
-import net.christopher.mccourse.entity.ModBoats;
-import net.christopher.mccourse.entity.ModEntities;
-import net.christopher.mccourse.world.gen.ModWorldGeneration;
-import net.christopher.mccourse.world.tree.ModFoliagePlacerTypes;
+import net.christopher.mccourse.painting.ModPainting;
 import net.christopher.mccourse.world.tree.custom.ModTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
 
@@ -11,10 +8,11 @@ import net.christopher.mccourse.block.ModBlocks;
 import net.christopher.mccourse.block.entity.ModBlockEntities;
 import net.christopher.mccourse.effect.ModEffects;
 import net.christopher.mccourse.enchantment.ModEnchantments;
+import net.christopher.mccourse.entity.ModBoats;
+import net.christopher.mccourse.entity.ModEntities;
 import net.christopher.mccourse.fluid.ModFluids;
 import net.christopher.mccourse.item.ModItemGroup;
 import net.christopher.mccourse.item.ModItems;
-import net.christopher.mccourse.painting.ModPainting;
 import net.christopher.mccourse.particle.ModParticles;
 import net.christopher.mccourse.potion.ModPotions;
 import net.christopher.mccourse.recipe.ModRecipes;
@@ -23,6 +21,9 @@ import net.christopher.mccourse.sound.ModSounds;
 import net.christopher.mccourse.util.ModLootTableModifiers;
 import net.christopher.mccourse.util.ModRegistries;
 import net.christopher.mccourse.villager.ModVillagers;
+import net.christopher.mccourse.world.gen.ModWorldGeneration;
+import net.christopher.mccourse.world.tree.ModFoliagePlacerTypes;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,10 +60,10 @@ public class MCCourseMod implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModEntities.registerModEntities();
-
 		ModTrunkPlacerTypes.register();
 
 		ModFoliagePlacerTypes.register();
 		ModBoats.registerBoats();
+
 	}
 }

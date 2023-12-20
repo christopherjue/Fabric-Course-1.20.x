@@ -2,6 +2,8 @@ package net.christopher.mccourse;
 
 import net.christopher.mccourse.world.ModConfiguredFeatures;
 import net.christopher.mccourse.world.ModPlacedFeatures;
+import net.christopher.mccourse.world.biome.ModBiomes;
+import net.christopher.mccourse.world.dimension.ModDimensions;
 import net.christopher.mccourse.world.gen.ModTreeGeneration;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -31,5 +33,7 @@ public class MCCourseModDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensions::bootstrapType);
 	}
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-11T17:12:45.3747628	MC Course Mod/Model Definitions
+// 1.20.1	2023-12-20T17:21:07.0368333	MCCourse Mod/Model Definitions
 9162be05041084f0ff9d57b044480250101a8449 assets\mccourse\models\item\soap_water_bucket.json
 7076f2752f9b902f02aa38e408b846b7a412db48 assets\mccourse\models\block\end_stone_pink_garnet_ore.json
 651b84eaccec0b3f839f34a309f6344b516ae7d7 assets\mccourse\models\block\driftwood_wood.json
@@ -52,6 +52,7 @@ eb5278f44e623dc3c6dd2a0fd7362ce8ae808d1a assets\mccourse\blockstates\stripped_dr
 a340c91d46a2fba2a3ccfc50e22319fb298557f5 assets\mccourse\models\block\pink_garnet_button_inventory.json
 5cddb15b4051ce5429b03da2199012d3e79dafff assets\mccourse\models\item\pink_garnet_leggings_redstone_trim.json
 9fc2b1c4972ee878386b7af3f14fbe411677a71b assets\mccourse\models\item\pink_garnet_chestplate_emerald_trim.json
+bee137067ab316ff0baae93a056e9e6f37603496 assets\mccourse\models\item\colored_leaves.json
 d40257fb6b951185ac67b3429e4f1d6c7f170bae assets\mccourse\models\item\pink_garnet_helmet_copper_trim.json
 e0ed4de0c81b30e99f61ecedd57b6075627edc2d assets\mccourse\blockstates\petunia.json
 05181b13c44e65c6ef3a58ee991e7edfd3be026a assets\mccourse\models\item\pink_garnet_boots_amethyst_trim.json
@@ -94,6 +95,7 @@ f7e2e574b5bce672aaa8e6bebd4caebadc30940d assets\mccourse\models\block\driftwood_
 c2f07e069269ae27c56a28d2a369d89b7a2addcf assets\mccourse\models\block\pink_garnet_fence_side.json
 1dad798f06050d9284deca4dcb1017c9367b48e3 assets\mccourse\models\item\pink_garnet_helmet.json
 0dc0efef841fcea75a620a33aa2722c58c446c04 assets\mccourse\models\block\pink_garnet_fence_post.json
+bf69819f578a5b0d8c1ce2870b224a810950285b assets\mccourse\models\block\colored_leaves.json
 a9c2ad639a17a7e11ba8db0407d46df21d585d43 assets\mccourse\models\block\pink_garnet_trapdoor_bottom.json
 b248f6f7dbea8bcf7f423b1e08de15603b92e8a9 assets\mccourse\models\block\nether_pink_garnet_ore.json
 0b6763db0b2ee2247303bd3176b8677d233bb68f assets\mccourse\models\block\pink_garnet_wall_inventory.json
@@ -132,6 +134,7 @@ bcde24a898152896a04d9c1d664cddbfb6f10383 assets\mccourse\models\block\pink_garne
 3c28ba1f863da5c3b3f34b859c96c58814bd2e77 assets\mccourse\blockstates\gem_empowering_station.json
 ec927e35db16275b88e3a3402fe7c4813682cb45 assets\mccourse\models\block\pink_garnet_wall_side.json
 3fbd768e82a3ffecc676ee3b0eac9d78080a5c85 assets\mccourse\models\block\pink_garnet_fence_gate_wall.json
+647acdc71f248fabd80972f5e8ec879675a5c424 assets\mccourse\blockstates\colored_leaves.json
 29793a98d1aa7148457f3d4d3ac5d7e8f343d102 assets\mccourse\blockstates\raw_pink_garnet_block.json
 434b418bf1d2cbc0ea110b6241e7ddc4a6d39442 assets\mccourse\models\block\driftwood_log_horizontal.json
 f02e0356dccacdf25fb28edbbbb2a77c529a03c7 assets\mccourse\models\item\pink_garnet_button.json

@@ -12,6 +12,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.rmi.MarshalledObject;
+
 public class ModItemGroup {
     public static final ItemGroup PINK_GARNET_GROUP = Registry.register(Registries.ITEM_GROUP,
     new Identifier(MCCourseMod.MOD_ID, "pink_garnet_group"),
@@ -33,6 +35,9 @@ public class ModItemGroup {
 
                         entries.add(ModItems.CATTAIL);
                         entries.add(ModItems.CATTAIL_SEEDS);
+
+
+                        entries.add(ModBlocks.COLORED_LEAVES);
 
 
 

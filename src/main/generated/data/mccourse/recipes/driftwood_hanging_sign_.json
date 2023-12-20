@@ -3,19 +3,19 @@
   "category": "misc",
   "key": {
     "I": {
-      "item": "mccourse:pink_garnet"
+      "item": "minecraft:chain"
     },
     "V": {
-      "item": "minecraft:stick"
+      "item": "mccourse:driftwood_log"
     }
   },
   "pattern": [
+    "I I",
     "VVV",
-    "VIV",
-    " I "
+    "VVV"
   ],
   "result": {
-    "item": "mccourse:metal_detector"
+    "item": "mccourse:driftwood_hanging_sign"
   },
   "show_notification": true
 }

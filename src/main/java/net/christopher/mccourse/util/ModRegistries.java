@@ -1,5 +1,6 @@
 package net.christopher.mccourse.util;
 
+import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.block.ModBlocks;
 import net.christopher.mccourse.command.ReturnHomeCommand;
 import net.christopher.mccourse.command.SetHomeCommand;
@@ -19,10 +20,13 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.kyrptonaught.customportalapi.CustomPortalBlock;
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
+import net.minecraft.util.Identifier;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 
@@ -37,15 +41,27 @@ public class ModRegistries {
         registerStrippables();
         registerFlammables();
         registerAttributes();
+        createPortal();
 
 
+    }
+
+
+
+    private static void createPortal() {
+        CustomPortalBuilder.beginPortal()
+                .frameBlock(ModBlocks.PINK_GARNET_BLOCK)
+                .lightWithItem(ModItems.CATTAIL)
+                .destDimID(new Identifier(MCCourseMod.MOD_ID, "kaupendim"))
+                .tintColor(0xc76efa)
+                .registerPortal();
     }
 
     private static void registerFuels() {
         FuelRegistry registry = FuelRegistry.INSTANCE;
 
 
-        registry.add(ModItems.PEAT_BRICK, 9000000);
+        registry.add(ModItems.PEAT_BRICK, 300);
 
     }
 
