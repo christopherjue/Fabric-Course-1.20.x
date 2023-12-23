@@ -34,8 +34,19 @@ public class ModLootTableModifiers {
                 // Adds Cauliflower Seeds to the grass loot table.
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(	0.1f)) // Drops 35% of the time
+                        .conditionally(RandomChanceLootCondition.builder(	0.5f)) // Drops 35% of the time
                         .with(ItemEntry.builder(ModItems.CAULIFLOWER_SEEDS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if(GRASS_BLOCK_ID.equals(id)) {
+                // Adds Cattail Seeds to the grass loot table.
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(	0.95f)) // Drops 35% of the time
+                        .with(ItemEntry.builder(ModItems.CATTAIL_SEEDS))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
 
                 tableBuilder.pool(poolBuilder.build());
@@ -67,15 +78,18 @@ public class ModLootTableModifiers {
 
 
 
-        LootTableEvents.REPLACE.register((resourceManager, lootManager, id, original, source) -> {
-            if(SUSPICIOUS_SAND_ID.equals(id)) {
-                List<LootPoolEntry> entries = new ArrayList<>(Arrays.asList(original.pools[0].entries));
-                entries.add(ItemEntry.builder(ModItems.METAL_DETECTOR).build());
-                LootPool.Builder pool = LootPool.builder().with(entries);
-                return LootTable.builder().pool(pool).build();
-            }
 
-            return null;
-        });
+
+
+    //    LootTableEvents.REPLACE.register((resourceManager, lootManager, id, original, source) -> {
+    //        if(SUSPICIOUS_SAND_ID.equals(id)) {
+    //            List<LootPoolEntry> entries = new ArrayList<>(Arrays.asList(original.pools[0].entries));
+    //            entries.add(ItemEntry.builder(ModItems.METAL_DETECTOR).build());
+    //            LootPool.Builder pool = LootPool.builder().with(entries);
+    //            return LootTable.builder().pool(pool).build();
+    //        }
+    //
+    //        return null;
+    //    });
     }
 }

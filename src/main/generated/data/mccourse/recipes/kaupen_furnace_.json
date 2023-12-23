@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "mccourse:pink_garnet_block"
+    },
+    "b": {
+      "item": "minecraft:blaze_powder"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "BbB",
+    "BBB"
+  ],
+  "result": {
+    "item": "mccourse:kaupen_furnace"
+  },
+  "show_notification": true
+}

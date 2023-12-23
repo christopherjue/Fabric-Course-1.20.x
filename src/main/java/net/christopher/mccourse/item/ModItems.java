@@ -10,6 +10,7 @@ import net.christopher.mccourse.sound.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -61,6 +62,8 @@ public class ModItems {
 
     public static final Item PINK_GARNET_HORSE_ARMOR = registerItem("pink_garnet_horse_armor",
             new HorseArmorItem(14, "pink_garnet", new FabricItemSettings()));
+
+
 
     public static final Item DRIFTWOOD_SIGN = registerItem("driftwood_sign",
             new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.DRIFTWOOD_SIGN, ModBlocks.DRIFTWOOD_WALL_SIGN));

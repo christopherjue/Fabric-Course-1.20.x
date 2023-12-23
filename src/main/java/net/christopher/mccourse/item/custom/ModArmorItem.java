@@ -22,7 +22,6 @@ public class ModArmorItem extends ArmorItem {
 
 
 
-//                            ( ),
 //                            ( new StatusEffectInstance(StatusEffects.STRENGTH, 9000, 1)),
 //                            ( new StatusEffectInstance(StatusEffects.SPEED, 9000, 1)),
 //                            ( new StatusEffectInstance(StatusEffects.RESISTANCE, 9000, 1)),

@@ -23,7 +23,6 @@ import net.christopher.mccourse.util.ModRegistries;
 import net.christopher.mccourse.villager.ModVillagers;
 import net.christopher.mccourse.world.gen.ModWorldGeneration;
 import net.christopher.mccourse.world.tree.ModFoliagePlacerTypes;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

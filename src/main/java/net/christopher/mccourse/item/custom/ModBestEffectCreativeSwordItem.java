@@ -15,25 +15,23 @@ public class ModBestEffectCreativeSwordItem extends SwordItem {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         // BAD EFFECTS
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 1500, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.BAD_OMEN, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 450, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 450, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.UNLUCK, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.UNLUCK, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 900, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 900, 1), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 900, 2), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 900, 2), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 1500, 3), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 900, 5), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.BAD_OMEN, 900, 2), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 900, 5), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 900, 2), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 450, 4), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 450, 7), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.UNLUCK, 900, 58), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 900, 4), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 900, 8), attacker);
 
 
         // GOOD EFFECTS
-        attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 900, 1), attacker);
-        attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 900, 1), attacker);
+        attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 900, 3), attacker);
+        attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 900, 3), attacker);
         attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 900, 1), attacker);
         attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 900, 1), attacker);
         attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 900, 1), attacker);

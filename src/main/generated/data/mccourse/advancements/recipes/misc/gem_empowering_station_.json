@@ -46,10 +46,10 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_calcite",
       "has_polished_blackstone",
-      "has_glass",
-      "has_the_recipe"
+      "has_glass"
     ]
   ],
   "rewards": {

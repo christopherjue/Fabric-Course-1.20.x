@@ -1,0 +1,14 @@
+{
+  "type": "mccourse:gem_empowering",
+  "craftTime": 15,
+  "energyAmount": 15,
+  "ingredients": [
+    {
+      "item": "minecraft:blackstone"
+    }
+  ],
+  "output": {
+    "count": 10,
+    "item": "minecraft:obsidian"
+  }
+}

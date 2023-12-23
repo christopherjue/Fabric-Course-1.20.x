@@ -6,16 +6,13 @@ import net.christopher.mccourse.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
-
-import java.util.List;
-import java.util.function.Consumer;
 
 public class ModRecipeGenerator extends FabricRecipeProvider {
     public ModRecipeGenerator(FabricDataOutput output) {
@@ -23,7 +20,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_PINK_GARNET)
                 .pattern("SSS")
                 .pattern("SPS")
@@ -333,6 +330,15 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PINK_GARNET_TRAPDOOR) + "_"));
 
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.KAUPEN_FURNACE)
+                .pattern("BBB")
+                .pattern("BbB")
+                .pattern("BBB")
+                .input('B', ModBlocks.PINK_GARNET_BLOCK)
+                .input('b', Items.BLAZE_POWDER)
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(Items.BLAZE_POWDER), conditionsFromItem(Items.BLAZE_POWDER))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.KAUPEN_FURNACE) + "_"));
 
 
 
@@ -345,35 +351,41 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
 
 
-        new GemEmpoweringRecipeBuilder(ModItems.RAW_PINK_GARNET, ModItems.PINK_GARNET, 6)
+
+
+        new GemEmpoweringRecipeBuilder(ModItems.RAW_PINK_GARNET, ModItems.PINK_GARNET, 6, 60, 15)
                 .criterion(hasItem(ModItems.RAW_PINK_GARNET), conditionsFromItem(ModItems.RAW_PINK_GARNET))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.STICK, Items.END_ROD, 1)
+        new GemEmpoweringRecipeBuilder(Items.STICK, Items.END_ROD, 1,60, 15)
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.BLAZE_POWDER, Items.ENDER_EYE, 1)
+        new GemEmpoweringRecipeBuilder(Items.BLAZE_POWDER, Items.ENDER_EYE, 19,60, 15)
                 .criterion(hasItem(Items.BLAZE_POWDER), conditionsFromItem(Items.BLAZE_POWDER))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.COAL, Items.DIAMOND, 1)
+        new GemEmpoweringRecipeBuilder(Items.COAL, Items.DIAMOND, 23,5, 15)
                 .criterion(hasItem(Items.COAL), conditionsFromItem(Items.COAL))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.OBSIDIAN, Items.CRYING_OBSIDIAN, 4)
+        new GemEmpoweringRecipeBuilder(Items.OBSIDIAN, Items.CRYING_OBSIDIAN, 5,15, 15)
                 .criterion(hasItem(Items.OBSIDIAN), conditionsFromItem(Items.OBSIDIAN))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.GHAST_TEAR, Items.END_CRYSTAL, 5)
+        new GemEmpoweringRecipeBuilder(Items.GHAST_TEAR, Items.END_CRYSTAL, 5,74, 15)
                 .criterion(hasItem(Items.GHAST_TEAR), conditionsFromItem(Items.GHAST_TEAR))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.GUNPOWDER, Items.TNT, 10)
+        new GemEmpoweringRecipeBuilder(Items.GUNPOWDER, Items.TNT, 1,35, 15)
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.NETHERRACK, Items.GHAST_TEAR, 4)
+        new GemEmpoweringRecipeBuilder(Items.NETHERRACK, Items.GHAST_TEAR, 23,2, 15)
+                .criterion(hasItem(Items.NETHERRACK), conditionsFromItem(Items.NETHERRACK))
+                .offerTo(exporter);
+
+        new GemEmpoweringRecipeBuilder(Items.BLACKSTONE, Items.OBSIDIAN, 10,15, 15)
                 .criterion(hasItem(Items.NETHERRACK), conditionsFromItem(Items.NETHERRACK))
                 .offerTo(exporter);
 

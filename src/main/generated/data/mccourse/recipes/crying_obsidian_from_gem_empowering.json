@@ -1,12 +1,14 @@
 {
   "type": "mccourse:gem_empowering",
+  "craftTime": 15,
+  "energyAmount": 15,
   "ingredients": [
     {
       "item": "minecraft:obsidian"
     }
   ],
   "output": {
-    "count": 4,
+    "count": 5,
     "item": "minecraft:crying_obsidian"
   }
 }

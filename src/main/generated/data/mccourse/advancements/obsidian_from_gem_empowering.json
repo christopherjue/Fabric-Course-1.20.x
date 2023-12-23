@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_netherrack": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:netherrack"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_netherrack"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

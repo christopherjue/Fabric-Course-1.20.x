@@ -1,14 +1,12 @@
 package net.christopher.mccourse;
 
+import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.christopher.mccourse.datagen.*;
 import net.christopher.mccourse.world.ModConfiguredFeatures;
 import net.christopher.mccourse.world.ModPlacedFeatures;
 import net.christopher.mccourse.world.biome.ModBiomes;
 import net.christopher.mccourse.world.dimension.ModDimensions;
-import net.christopher.mccourse.world.gen.ModTreeGeneration;
-import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.christopher.mccourse.datagen.*;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
@@ -23,10 +21,10 @@ public class MCCourseModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeGenerator::new);
 		pack.addProvider(ModPaintingVariantTagProvider::new);
+		pack.addProvider(ModAdvancementProvider::new);
 		pack.addProvider(ModPOITagProvider::new);
 		pack.addProvider(ModFluidTagProvider::new);
 		pack.addProvider(ModWorldGenerator::new);
-		pack.addProvider(ModAdvancementProvider::new);
 	}
 
 	@Override

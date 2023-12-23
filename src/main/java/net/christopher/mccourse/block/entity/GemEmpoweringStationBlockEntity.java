@@ -1,6 +1,5 @@
 package net.christopher.mccourse.block.entity;
 
-import net.christopher.mccourse.networking.ModMessages;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -12,6 +11,7 @@ import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.fabricmc.tinyremapper.OutputConsumerPath;
 import net.christopher.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.christopher.mccourse.item.ModItems;
+import net.christopher.mccourse.networking.ModMessages;
 import net.christopher.mccourse.recipe.GemEmpoweringRecipe;
 import net.christopher.mccourse.screen.GemEmpoweringScreenHandler;
 import net.minecraft.block.BlockState;
@@ -29,6 +29,7 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -41,7 +42,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import team.reborn.energy.api.base.SimpleEnergyStorage;
 
-import java.util.List;
 import java.util.Optional;
 
 public class GemEmpoweringStationBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
@@ -55,6 +55,10 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
+    private final int DEFAULT_MAX_PROGRESS = 72;
+
+    private int energyAmount = 25;
+    private final int DEFAULT_ENERGY_AMOUNT = 25;
 
     public GemEmpoweringStationBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.GEM_EMPOWERING_STATION_BE, pos, state);
@@ -84,42 +88,33 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     }
 
     public ItemStack getRenderStack() {
-        if (this.getStack(OUTPUT_SLOT).isEmpty()) {
+        if(this.getStack(OUTPUT_SLOT).isEmpty()) {
             return this.getStack(INPUT_SLOT);
-
-        }else {
+        } else {
             return this.getStack(OUTPUT_SLOT);
-
         }
     }
 
     @Override
     public void markDirty() {
-        if (!world.isClient()) {
+        if(!world.isClient()) {
             PacketByteBuf data = PacketByteBufs.create();
             data.writeInt(inventory.size());
-            for (int i = 0; i < inventory.size(); i ++) {
+            for(int i = 0; i < inventory.size(); i++) {
                 data.writeItemStack(inventory.get(i));
             }
-
             data.writeBlockPos(getPos());
 
-            for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
+            for(ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
                 ServerPlayNetworking.send(player, ModMessages.ITEM_SYNC, data);
-
-
-
-
             }
-
-
-
         }
+
         super.markDirty();
     }
 
     public void setInventory(DefaultedList<ItemStack> list) {
-        for (int i = 0; i < list.size(); i++) {
+        for(int i = 0; i < list.size(); i++) {
             this.inventory.set(i, list.get(i));
         }
     }
@@ -132,7 +127,6 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
         }
     };
 
-
     public final SingleVariantStorage<FluidVariant> fluidStorage = new SingleVariantStorage<FluidVariant>() {
         @Override
         protected FluidVariant getBlankVariant() {
@@ -141,9 +135,8 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
 
         @Override
         protected long getCapacity(FluidVariant variant) {
-            return (FluidConstants.BUCKET / 81) * 64;
+            return (FluidConstants.BUCKET / 81) * 64; // 1 Bucket = 81000 Droplets = 1000mB || *64 ==> 64,000mB = 64 Buckets
         }
-
 
         @Override
         protected void onFinalCommit() {
@@ -202,7 +195,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
             case EAST -> side.rotateYClockwise() == Direction.SOUTH && slot == OUTPUT_SLOT ||
                     side.rotateYClockwise() == Direction.EAST && slot == OUTPUT_SLOT;
 
-            case SOUTH ->   side == Direction.SOUTH && slot == FLUID_ITEM_SLOT ||
+            case SOUTH ->   side == Direction.SOUTH && slot == OUTPUT_SLOT ||
                     side == Direction.EAST && slot == OUTPUT_SLOT;
 
             case WEST -> side.rotateYCounterclockwise() == Direction.SOUTH && slot == OUTPUT_SLOT ||
@@ -236,6 +229,8 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("gem_empowering_station.progress", progress);
+        nbt.putInt("gem_empowering_station.max_progress", maxProgress);
+        nbt.putInt("gem_empowering_station.energy_amount", energyAmount);
         nbt.putLong(("gem_empowering_station.energy"), energyStorage.amount);
         nbt.put("gem_empowering_station.variant", fluidStorage.variant.toNbt());
         nbt.putLong("gem_empowering_station.fluid_amount", fluidStorage.amount);
@@ -245,6 +240,8 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         progress = nbt.getInt("gem_empowering_station.progress");
+        maxProgress = nbt.getInt("gem_empowering_station.max_progress");
+        energyAmount = nbt.getInt("gem_empowering_station.energy_amount");
         energyStorage.amount = nbt.getLong("gem_empowering_station.energy");
         fluidStorage.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("gem_empowering_station.variant"));
         fluidStorage.amount = nbt.getLong("gem_empowering_station.fluid_amount");
@@ -252,7 +249,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {
-        fillUpOnEnergy();
+        fillUpOnEnergy(); // until we have machines/other mods that give us Energy
         fillUpOnFluid();
 
         if(canInsertIntoOutputSlot() && hasRecipe()) {
@@ -278,10 +275,9 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     }
 
     private void fillUpOnFluid() {
-     if (hasFluidSourceItemInFluidSlot(FLUID_ITEM_SLOT)) {
-         transferItemFluidToTank(FLUID_ITEM_SLOT);
-         
-     }
+        if(hasFluidSourceItemInFluidSlot(FLUID_ITEM_SLOT)) {
+            transferItemFluidToTank(FLUID_ITEM_SLOT);
+        }
     }
 
     private void transferItemFluidToTank(int fluidItemSlot) {
@@ -289,6 +285,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
             this.fluidStorage.insert(FluidVariant.of(Fluids.WATER),
                     (FluidConstants.BUCKET / 81), transaction);
             transaction.commit();
+
             this.setStack(fluidItemSlot, new ItemStack(Items.BUCKET));
         }
     }
@@ -299,7 +296,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
 
     private void extractEnergy() {
         try(Transaction transaction = Transaction.openOuter()) {
-            this.energyStorage.extract(32L, transaction);
+            this.energyStorage.extract(energyAmount, transaction);
             transaction.commit();
         }
     }
@@ -318,21 +315,22 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     }
 
     private void craftItem() {
-        Optional<GemEmpoweringRecipe> recipe = getCurrentRecipe();
+        Optional<RecipeEntry<GemEmpoweringRecipe>> recipe = getCurrentRecipe();
 
         this.removeStack(INPUT_SLOT, 1);
 
-        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(),
-                this.getStack(OUTPUT_SLOT).getCount() + recipe.get().getOutput(null).getCount()));
+        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
+                this.getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
     }
 
     private void resetProgress() {
         this.progress = 0;
+        this.maxProgress = DEFAULT_MAX_PROGRESS;
+        this.energyAmount = DEFAULT_ENERGY_AMOUNT;
     }
 
     private boolean hasCraftingFinished() {
         return this.progress >= this.maxProgress;
-
     }
 
     private void increaseCraftingProgress() {
@@ -340,23 +338,25 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     }
 
     private boolean hasRecipe() {
-        Optional<GemEmpoweringRecipe> recipe = getCurrentRecipe();
+        Optional<RecipeEntry<GemEmpoweringRecipe>> recipe = getCurrentRecipe();
 
         if (recipe.isEmpty()) {
             return false;
         }
-        ItemStack output = recipe.get().getOutput(null);
+        ItemStack output = recipe.get().value().getResult(null);
+        this.maxProgress = recipe.get().value().getCraftTime();
+        this.energyAmount = recipe.get().value().getEnergyAmount();
 
         return canInsertAmountIntoOutputSlot(output.getCount())
                 && canInsertItemIntoOutputSlot(output) && hasEnoughEnergyToCraft() && hasEnoughFluidToCraft();
     }
 
     private boolean hasEnoughFluidToCraft() {
-        return this.fluidStorage.amount >= 500;
+        return this.fluidStorage.amount >= 500; // mB amount!
     }
 
     private boolean hasEnoughEnergyToCraft() {
-        return this.energyStorage.amount >= 32L * this.maxProgress;
+        return this.energyStorage.amount >= this.energyAmount * this.maxProgress;
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
@@ -367,7 +367,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
         return this.getStack(OUTPUT_SLOT).getMaxCount() >= this.getStack(OUTPUT_SLOT).getCount() + count;
     }
 
-    private Optional<GemEmpoweringRecipe> getCurrentRecipe() {
+    private Optional<RecipeEntry<GemEmpoweringRecipe>> getCurrentRecipe() {
         SimpleInventory inventory = new SimpleInventory((this.size()));
         for(int i = 0; i < this.size(); i++) {
             inventory.setStack(i, this.getStack(i));
@@ -391,6 +391,5 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     public NbtCompound toInitialChunkDataNbt() {
         return createNbt();
     }
-
 
 }

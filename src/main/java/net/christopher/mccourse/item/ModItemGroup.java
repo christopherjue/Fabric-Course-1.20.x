@@ -38,6 +38,14 @@ public class ModItemGroup {
 
 
                         entries.add(ModBlocks.COLORED_LEAVES);
+                        entries.add(ModBlocks.RUBY_BLOCK);
+                        entries.add(ModBlocks.RUBY_BLOCK_1);
+                        entries.add(ModBlocks.RUBY_BLOCK_2);
+                        entries.add(ModBlocks.RUBY_BLOCK_3);
+                        entries.add(ModBlocks.WAXED_RUBY_BLOCK);
+                        entries.add(ModBlocks.WAXED_RUBY_BLOCK_1);
+                        entries.add(ModBlocks.WAXED_RUBY_BLOCK_2);
+                        entries.add(ModBlocks.WAXED_RUBY_BLOCK_3);
 
 
 
@@ -73,6 +81,10 @@ public class ModItemGroup {
                         entries.add(ModItems.PINK_GARNET_BOOTS);
                         entries.add(ModItems.DATA_TABLET);
                         entries.add(ModItems.CAULIFLOWER_SEEDS);
+
+
+
+                        entries.add(ModBlocks.KAUPEN_FURNACE);
 
 
 

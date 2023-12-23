@@ -72,15 +72,22 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.PINK_GARNET_LAMP_BLOCK)
                 .coordinate(BlockStateModelGenerator.createBooleanModelMap(PinkGarnetLampBlock.CLICKED, identifier2, identifier)));
 
-
         blockStateModelGenerator.registerCrop(ModBlocks.CATTAIL_CROP, CattailCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6, 7, 8);
-
 
         blockStateModelGenerator.registerSingleton(ModBlocks.COLORED_LEAVES, TexturedModel.LEAVES);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_BLOCK_1);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_BLOCK_2);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_BLOCK_3);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.WAXED_RUBY_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.WAXED_RUBY_BLOCK_1);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.WAXED_RUBY_BLOCK_2);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.WAXED_RUBY_BLOCK_3);
+
+        blockStateModelGenerator.registerCooker(ModBlocks.KAUPEN_FURNACE, TexturedModel.ORIENTABLE);
     }
-
-
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {

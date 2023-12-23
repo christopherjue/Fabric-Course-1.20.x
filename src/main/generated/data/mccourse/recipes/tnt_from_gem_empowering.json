@@ -1,12 +1,13 @@
 {
   "type": "mccourse:gem_empowering",
+  "craftTime": 35,
+  "energyAmount": 15,
   "ingredients": [
     {
       "item": "minecraft:gunpowder"
     }
   ],
   "output": {
-    "count": 10,
     "item": "minecraft:tnt"
   }
 }

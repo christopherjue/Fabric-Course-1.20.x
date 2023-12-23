@@ -17,13 +17,11 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     PINK_GARNET("pink_garnet", 25, Util.make(new EnumMap(ArmorItem.Type.class), map -> {
-        map.put(ArmorItem.Type.BOOTS, 3);
-        map.put(ArmorItem.Type.LEGGINGS, 6);
-        map.put(ArmorItem.Type.CHESTPLATE, 8);
-        map.put(ArmorItem.Type.HELMET, 3);
-    }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.0f, 0.0f, () -> Ingredient.ofItems(ModItems.PINK_GARNET));
-
-    public static final StringIdentifiable.Codec<ArmorMaterials> CODEC;
+        map.put(ArmorItem.Type.BOOTS, 50);
+        map.put(ArmorItem.Type.LEGGINGS, 85);
+        map.put(ArmorItem.Type.CHESTPLATE, 90);
+        map.put(ArmorItem.Type.HELMET, 80);
+    }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0f, 0.0f, () -> Ingredient.ofItems(ModItems.PINK_GARNET));
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY;
     private final String name;
     private final int durabilityMultiplier;
@@ -87,12 +85,11 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     static {
-        CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
         BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), map -> {
-            map.put(ArmorItem.Type.BOOTS, 13);
-            map.put(ArmorItem.Type.LEGGINGS, 15);
-            map.put(ArmorItem.Type.CHESTPLATE, 16);
-            map.put(ArmorItem.Type.HELMET, 11);
+            map.put(ArmorItem.Type.BOOTS, 40000);
+            map.put(ArmorItem.Type.LEGGINGS, 90000);
+            map.put(ArmorItem.Type.CHESTPLATE, 15000);
+            map.put(ArmorItem.Type.HELMET, 60000);
         });
     }
 }

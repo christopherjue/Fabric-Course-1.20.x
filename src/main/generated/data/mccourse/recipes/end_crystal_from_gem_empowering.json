@@ -1,5 +1,7 @@
 {
   "type": "mccourse:gem_empowering",
+  "craftTime": 74,
+  "energyAmount": 15,
   "ingredients": [
     {
       "item": "minecraft:ghast_tear"

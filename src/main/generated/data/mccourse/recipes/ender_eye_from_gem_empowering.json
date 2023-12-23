@@ -1,11 +1,14 @@
 {
   "type": "mccourse:gem_empowering",
+  "craftTime": 60,
+  "energyAmount": 15,
   "ingredients": [
     {
       "item": "minecraft:blaze_powder"
     }
   ],
   "output": {
+    "count": 19,
     "item": "minecraft:ender_eye"
   }
 }
