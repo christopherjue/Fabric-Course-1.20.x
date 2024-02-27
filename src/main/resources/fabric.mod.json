@@ -3,7 +3,9 @@
 	"id": "mccourse",
 	"version": "${version}",
 	"name": "MCCourse Mod",
-	"description": "This mod adds a new armor set tools weapons and a new dimension with the new gem the pink garnet.",
+	"description": "This mod adds a new armor set tools weapons and a new dimension with the new gem the pink garnet. Mostly based on kaupenjoe 1.20.1 Udemy course. I added and changed some things about the mod but it is mostly kapenjoes code Udemy link:https://www.udemy.com/course/minecraft-modding-120x-for-fabric/learn/lecture/39134856#content",
+
+
 	"authors": [
 		"Christopher"
 	],
@@ -12,7 +14,6 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/mccourse/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [

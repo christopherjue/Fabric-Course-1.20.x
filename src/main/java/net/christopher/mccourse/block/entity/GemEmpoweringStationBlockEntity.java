@@ -97,7 +97,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
 
     @Override
     public void markDirty() {
-        if(!world.isClient()) {
+        if(world!=null && !world.isClient()) {
             PacketByteBuf data = PacketByteBufs.create();
             data.writeInt(inventory.size());
             for(int i = 0; i < inventory.size(); i++) {
