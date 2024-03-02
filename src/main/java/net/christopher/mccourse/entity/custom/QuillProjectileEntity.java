@@ -15,7 +15,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
 
 public class QuillProjectileEntity {
-    //trown item entity
 
 
 }

@@ -26,7 +26,7 @@ repositories {
 }
 
 loom {
-	runs {
+    runs {
 		// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
 		datagen {
 			inherit server
@@ -34,7 +34,7 @@ loom {
 			vmArg "-Dfabric-api.datagen"
 			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
 			vmArg "-Dfabric-api.datagen.modid=mccourse"
-
+ 
 			runDir "build/datagen"
 		}
 	}
@@ -74,7 +74,7 @@ dependencies {
 	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20.2'
 	include 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20.2'
 
-	// Uncomment the following line to enable the deprecated Fabric API modules.
+	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"

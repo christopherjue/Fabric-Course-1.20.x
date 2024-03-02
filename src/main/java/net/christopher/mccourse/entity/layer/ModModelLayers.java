@@ -11,4 +11,7 @@ public class ModModelLayers {
 
     public static final EntityModelLayer MAGIC_PROJECTILE =
             new EntityModelLayer(new Identifier(MCCourseMod.MOD_ID, "magic_projectile"), "main");
+
+    public static final EntityModelLayer PORCUPINE_QUILL =
+            new EntityModelLayer(new Identifier(MCCourseMod.MOD_ID, "porcupine_quill"), "main");
 }

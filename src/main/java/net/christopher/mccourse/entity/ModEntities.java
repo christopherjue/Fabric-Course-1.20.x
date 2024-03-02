@@ -30,6 +30,11 @@ public class ModEntities {
             FabricEntityTypeBuilder.<MagicProjectileEntity>create(SpawnGroup.MISC, MagicProjectileEntity::new)
                     .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
 
+    public static final EntityType<PorcupineEntity> PORCUPINE_QUILL = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MCCourseMod.MOD_ID, "porcupine_quill"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PorcupineEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25f, 5f)).build());
+
 
 
 
