@@ -1,5 +1,6 @@
 package net.christopher.mccourse.entity;
 
+import net.christopher.mccourse.entity.custom.GiraffeEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.christopher.mccourse.MCCourseMod;
 import net.christopher.mccourse.entity.custom.DiceProjectileEntity;
@@ -34,6 +35,15 @@ public class ModEntities {
             new Identifier(MCCourseMod.MOD_ID, "porcupine_quill"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PorcupineEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25f, 5f)).build());
+
+
+    public static final EntityType<GiraffeEntity> GIRAFFE = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MCCourseMod.MOD_ID, "giraffe"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GiraffeEntity::new)
+                    .dimensions(EntityDimensions.fixed(5f, 10f)).build());
+
+
+
 
 
 
